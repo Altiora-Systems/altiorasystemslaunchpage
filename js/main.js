@@ -17,18 +17,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize scroll reveal animations
     initializeScrollReveal();
+    
+    // Initialize mobile menu
+    initializeMobileMenu();
 });
 
 // Initialize page loading animations
 function initializeAnimations() {
-    // Set initial body opacity for loading effect
-    document.body.style.opacity = '0';
+    // Ensure body is visible
+    document.body.style.opacity = '1';
     
-    // Fade in page on load
-    window.addEventListener('load', function() {
-        document.body.style.opacity = '1';
-        document.body.style.transition = 'opacity 0.5s ease';
-    });
+    // Add subtle fade-in effect for better UX
+    document.body.style.transition = 'opacity 0.3s ease';
 }
 
 // Set up smooth scrolling for anchor links
@@ -130,29 +130,30 @@ function setupButtonInteractions() {
     }
 }
 
-// Initialize scroll reveal animations - simplified
+// Initialize scroll reveal animations - simplified for better UX
 function initializeScrollReveal() {
+    // Simple fade-in for stat cards only
+    const statCards = document.querySelectorAll('.stat-card');
+    
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.3,
+        rootMargin: '0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
                 entry.target.style.opacity = '1';
-                // Remove transform animations for static positioning
+                entry.target.style.transform = 'translateY(0)';
             }
         });
     }, observerOptions);
 
-    // Only observe stat cards for minimal animation
-    const statCards = document.querySelectorAll('.stat-card');
+    // Apply subtle animation only to stat cards
     statCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transition = `opacity 0.4s ease ${index * 0.1}s`;
-        
+        card.style.opacity = '0.8';
+        card.style.transform = 'translateY(10px)';
+        card.style.transition = `all 0.4s ease ${index * 0.1}s`;
         observer.observe(card);
     });
 }
@@ -174,18 +175,53 @@ function addRippleCSS() {
     }
 }
 
-// Mobile menu handling
-function initializeMobileMenu() {
-    let isMobile = window.innerWidth <= 768;
-    const header = document.querySelector('.header');
+// MOBILE MENU FUNCTIONALITY
 
-    window.addEventListener('resize', function() {
-        const wasMobile = isMobile;
-        isMobile = window.innerWidth <= 768;
+// Initialize mobile menu toggle
+function initializeMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenuDropdown = document.querySelector('.mobile-menu-dropdown');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    
+    if (!mobileMenuBtn || !mobileMenuDropdown) return;
+    
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuDropdown.classList.toggle('active');
         
-        if (wasMobile !== isMobile && header) {
-            // Reset header styles on resize
-            header.style.height = '';
+        // Update aria-expanded for accessibility
+        const isExpanded = mobileMenuDropdown.classList.contains('active');
+        mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+        
+        // Toggle body scroll lock when menu is open
+        document.body.style.overflow = isExpanded ? 'hidden' : '';
+    });
+    
+    // Close mobile menu when clicking nav links
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenuDropdown.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!mobileMenuBtn.contains(e.target) && !mobileMenuDropdown.contains(e.target)) {
+            mobileMenuDropdown.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Handle escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenuDropdown.classList.contains('active')) {
+            mobileMenuDropdown.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            mobileMenuBtn.focus();
         }
     });
 }

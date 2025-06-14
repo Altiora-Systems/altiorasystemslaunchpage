@@ -16,6 +16,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" href="assets/icons/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
     
     <!-- Styles -->
     <link rel="stylesheet" href="css/base.css">
@@ -43,6 +44,28 @@
                     <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="social-icon">
                 </a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu-dropdown">
+                <img src="assets/icons/ui/Header/Mobile menu.svg" alt="Mobile Menu" class="mobile-menu-icon">
+            </button>
+
+            <!-- Mobile Menu Dropdown -->
+            <div class="mobile-menu-dropdown" id="mobile-menu-dropdown" role="menu">
+                <nav class="mobile-navigation">
+                    <a href="about.html" class="mobile-nav-link">ABOUT</a>
+                    <a href="#products" class="mobile-nav-link">PRODUCTS</a>
+                    <a href="contact.html" class="mobile-nav-link">CONTACT</a>
+                </nav>
+                <div class="mobile-social-icons">
+                    <a href="#" class="mobile-social-link" aria-label="Twitter/X">
+                        <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="mobile-social-icon">
+                    </a>
+                    <a href="#" class="mobile-social-link" aria-label="LinkedIn">
+                        <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="mobile-social-icon">
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -51,24 +74,23 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-container">
-                <div class="hero-text">
-                    <h1 class="hero-title">From Their Front Door to Yours.</h1>
-                    <h2 class="hero-subtitle">A seamless journey powered by two unified platforms.</h2>
-                    <p class="hero-description">BarrelLink and Altiora Connect unite consumers and carriers in one seamless end-to-end shipping experience.</p>
-                    <button class="cta-button">Join our network</button>
-                </div>
-                
-                <div class="hero-devices">
-                    <div class="phone-container">
-                        <img src="assets/images/mockups/iPhone 12 Pro mockup.svg" alt="iPhone Mockup" class="phone-mockup-svg">
-                        <div class="phone-screen-content">
-                            <img src="assets/images/mockups/BarrelLink MVP.png" alt="BarrelLink App Interface" class="app-screenshot">
-                        </div>
+                <div class="hero-left">
+                    <div class="hero-text">
+                        <h1 class="hero-title">From Their Front Door to Yours.</h1>
+                        <h2 class="hero-subtitle">A seamless journey powered by two unified platforms.</h2>
+                        <button class="cta-button">JOIN OUR NETWORK</button>
+                        <p class="hero-description">Barrel <span class="barrel-link">Link</span> and Altiora <span class="altiora-connect">Connect</span> unite consumers and carriers in one seamless end-to-end shipping experience.</p>
                     </div>
-                    <div class="laptop-container">
-                        <img src="assets/images/mockups/Macbook Pro 16 mockup.svg" alt="MacBook Pro Mockup" class="laptop-mockup-svg">
-                        <div class="laptop-screen-content">
-                            <img src="assets/images/logos/altiora connect_w:white.svg" alt="AltioraConnect" class="connect-logo">
+                </div>
+                <div class="hero-right">
+                    <div class="hero-devices">
+                        <!-- SVG Wave background for hero devices -->
+                        <img src="assets/images/backgrounds/waves.svg" alt="Colorful Wave" class="hero-wave-bg" draggable="false" aria-hidden="true">
+                        <div class="phone-container">
+                            <img src="assets/images/mockups/iPhone 12 Pro mockup.png" alt="iPhone Mockup" class="phone-mockup-img">
+                        </div>
+                        <div class="laptop-container">
+                            <img src="assets/images/mockups/Macbook Pro 16 mockup.png" alt="MacBook Pro Mockup" class="laptop-mockup-img">
                         </div>
                     </div>
                 </div>
