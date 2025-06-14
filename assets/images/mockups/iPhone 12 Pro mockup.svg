@@ -13,7 +13,6 @@
 <path d="M184.51 97.0009H185.357V96.0787H186.026V95.3313H185.357V92.0536H184.109C183.235 93.3701 182.539 94.4707 182.093 95.2901V96.0787H184.51V97.0009ZM182.913 95.3004C183.489 94.2856 184.003 93.473 184.476 92.7736H184.524V95.3518H182.913V95.3004Z" fill="black"/>
 <path d="M187.912 97.0009H188.796V92.0536H187.915L186.623 92.9587V93.809L187.853 92.945H187.912V97.0009Z" fill="black"/>
 </g>
-<g filter="url(#filter1_d_13_200)">
 <path d="M343.988 177.023H344.681C345.063 177.023 345.373 177.334 345.373 177.719V223.165C345.373 223.549 345.063 223.861 344.681 223.861H343.988V177.023Z" fill="#303030"/>
 <path d="M151.385 233.599L150.692 233.599C150.31 233.599 150 233.288 150 232.904L150 205.543C150 205.159 150.31 204.847 150.692 204.847L151.385 204.847L151.385 233.599Z" fill="#303030"/>
 <path d="M151.385 195.573L150.692 195.573C150.31 195.573 150 195.261 150 194.877L150 167.516C150 167.132 150.31 166.821 150.692 166.821L151.385 166.821L151.385 195.573Z" fill="#333333"/>
@@ -32,9 +31,8 @@
 <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M267.317 89.3763C267.572 89.3763 267.778 89.1686 267.778 88.9124C267.778 88.6561 267.572 88.4484 267.317 88.4484C267.062 88.4484 266.855 88.6561 266.855 88.9124C266.855 89.1686 267.062 89.3763 267.317 89.3763Z" fill="#636F73"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M236.371 89.8397C236.371 89.0714 236.994 88.4485 237.762 88.4485H257.612C258.38 88.4485 259.003 89.0714 259.003 89.8397V89.8397C259.003 90.6081 258.38 91.2309 257.612 91.2309H237.762C236.994 91.2309 236.371 90.6081 236.371 89.8397V89.8397Z" fill="#262C2D"/>
 </g>
-</g>
 <defs>
-<filter id="filter0_d_13_200" x="-0.000488281" y="0" width="495.668" height="698.826" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_13_200" x="-0.000488281" y="0" width="495.668" height="697.89" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="75"/>
@@ -46,15 +44,6 @@
 <pattern id="pattern0_13_200" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_13_200" transform="matrix(0.000663645 0 0 0.000327109 -0.031015 0.00438608)"/>
 </pattern>
-<filter id="filter1_d_13_200" x="-0.000488281" y="0" width="495.668" height="697.89" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="75"/>
-<feGaussianBlur stdDeviation="75"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.0392157 0 0 0 0 0.0496732 0 0 0 0 0.0705882 0 0 0 0.14 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_13_200"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_13_200" result="shape"/>
-</filter>
 <clipPath id="clip0_13_200">
 <rect width="175.54" height="380.102" fill="white" transform="translate(159.83 83.894)"/>
 </clipPath>
