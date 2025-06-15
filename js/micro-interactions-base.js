@@ -134,6 +134,11 @@ class BaseMicroInteractions {
     // ================================
     // NOTIFICATIONS
     // ================================
+    setupNotifications() {
+        // Make showNotification globally accessible
+        window.showNotification = this.showNotification;
+    }
+
     showNotification(message, type = 'success', duration = 4000) {
         // Remove existing notifications
         const existing = document.querySelectorAll('.notification-enhanced');

@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Instantiate BaseMicroInteractions
+    new BaseMicroInteractions();
 });
 
 // Shared Utility Functions

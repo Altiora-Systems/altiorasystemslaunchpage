@@ -1,19 +1,10 @@
-# Netlify Redirects and Rewrites
+# Note: This file is for Netlify deployment only
+# For Hostinger (current deployment), redirects are handled in .htaccess
 
-# Handle form submissions
-/contact  /contact.html  200
+# If migrating to Netlify in the future, these rules would apply:
+# /contact  /contact.html  200
+# /home     /               301
+# /home.html /              301
+# /*        /404.html       404
 
-# Redirect old paths to new structure
-/home     /               301
-/home.html /              301
-
-# Handle 404s with custom page
-/*        /404.html       404
-
-# Security headers
-/*
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  X-XSS-Protection: 1; mode=block
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
+# For current Hostinger deployment, see .htaccess for redirect rules

@@ -16,9 +16,16 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# Block unnecessary files
-Disallow: /js/
-Disallow: /css/
+# Block unnecessary files and directories
+Disallow: /Documents/
+Disallow: /optimize-images.sh
+Disallow: /test-mobile-menu.html
+Disallow: /*.sh$
+Disallow: /*.md$
+
+# Allow CSS and JS for proper rendering
+Allow: /css/
+Allow: /js/
 Disallow: /*.json$
 Disallow: /_redirects
 Disallow: /netlify.toml

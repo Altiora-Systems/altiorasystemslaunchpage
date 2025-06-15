@@ -55,10 +55,10 @@
       </nav>
       <div class="social-icons">
         <a href="https://x.com/AltioraSystems" class="social-link" aria-label="Twitter/X" target="_blank" rel="noopener">
-          <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="social-icon">
+          <img src="assets/icons/ui/X_white_icon.svg" alt="X (Twitter)" class="social-icon">
         </a>
         <a href="https://www.linkedin.com/company/altiora-systems" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="social-icon">
+          <img src="assets/icons/ui/linkedin_white_icon.svg" alt="LinkedIn" class="social-icon">
         </a>
       </div>
       <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu-dropdown">
@@ -72,10 +72,10 @@
         </nav>
         <div class="mobile-social-icons">
           <a href="https://x.com/AltioraSystems" class="mobile-social-link" aria-label="Twitter/X" target="_blank" rel="noopener">
-            <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="mobile-social-icon">
+            <img src="assets/icons/ui/X_white_icon.svg" alt="X (Twitter)" class="mobile-social-icon">
           </a>
           <a href="https://www.linkedin.com/company/altiora-systems" class="mobile-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="mobile-social-icon">
+            <img src="assets/icons/ui/linkedin_white_icon.svg" alt="LinkedIn" class="mobile-social-icon">
           </a>
         </div>
       </div>
@@ -89,40 +89,38 @@
       <div class="contact-layout scroll-reveal">
         <!-- Left side: Form -->
         <div class="contact-form-section">
-          <form class="contact-form" id="contact-form" method="POST" action="YOUR_GOOGLE_SHEETS_SCRIPT_URL">
-            <input type="hidden" name="_next" value="/thank-you.html">
-            <input type="hidden" name="_subject" value="Contact Form Submission">
+          <form class="contact-form" id="contact-form">
             <div class="form-group">
               <label for="name" class="form-label">Name</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your name">
             </div>
             
             <div class="form-group">
               <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+              <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com">
             </div>
             
             <div class="form-group">
               <label for="subject" class="form-label">Subject</label>
-              <input type="text" id="subject" name="subject" class="form-input" placeholder="How can we help?" required>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="How can we help?">
             </div>
             
             <div class="form-group">
               <label for="message" class="form-label">Message</label>
-              <textarea id="message" name="message" class="form-textarea" placeholder="Your message here..." rows="5" required></textarea>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Your message here..." rows="5"></textarea>
             </div>
             
             <div class="checkbox-group">
               <label for="agreeComms" class="checkbox-custom">
-                <input type="checkbox" id="agreeComms" name="agreeComms" required>
+                <input type="checkbox" id="agreeComms" name="agreeComms">
                 <span class="checkmark"></span>
                 I agree to receive communications from Altiora Systems
               </label>
             </div>
             
             <div class="form-buttons">
-              <button type="submit" class="btn-send">SEND MESSAGE</button>
-              <button type="button" class="btn-clear" onclick="clearForm()">CLEAR FORM</button>
+              <button type="submit" class="btn-send" id="send-message-btn">SEND MESSAGE</button>
+              <button type="button" class="btn-clear" id="clear-form-btn">CLEAR FORM</button>
             </div>
           </form>
         </div>
@@ -156,19 +154,18 @@
       <p class="footer-text">© <span id="current-year-contact"></span> Altiora Systems LLC. All rights reserved.</p>
       <div class="footer-social">
         <a href="https://x.com/AltioraSystems" class="footer-social-link" aria-label="Twitter/X" target="_blank" rel="noopener">
-          <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="footer-social-icon">
+          <img src="assets/icons/ui/X_white_icon.svg" alt="X (Twitter)" class="footer-social-icon">
         </a>
         <a href="https://www.linkedin.com/company/altiora-systems" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="footer-social-icon">
+          <img src="assets/icons/ui/linkedin_white_icon.svg" alt="LinkedIn" class="footer-social-icon">
         </a>
       </div>
     </div>
   </footer>
 
   <script>document.getElementById('current-year-contact').textContent = new Date().getFullYear();</script>
+  <script src="js/micro-interactions-base.js"></script>
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
-  <script src="js/micro-interactions-base.js"></script>
-  <script src="js/micro-interactions-contact.js"></script>
 </body>
 </html>

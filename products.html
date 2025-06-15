@@ -55,10 +55,10 @@
       </nav>
       <div class="social-icons">
         <a href="https://x.com/AltioraSystems" class="social-link" aria-label="Twitter/X" target="_blank" rel="noopener">
-          <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="social-icon">
+          <img src="assets/icons/ui/X_white_icon.svg" alt="X (Twitter)" class="social-icon">
         </a>
         <a href="https://www.linkedin.com/company/altiora-systems" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="social-icon">
+          <img src="assets/icons/ui/linkedin_white_icon.svg" alt="LinkedIn" class="social-icon">
         </a>
       </div>
       <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu-dropdown">
@@ -72,10 +72,10 @@
         </nav>
         <div class="mobile-social-icons">
           <a href="https://x.com/AltioraSystems" class="mobile-social-link" aria-label="Twitter/X" target="_blank" rel="noopener">
-            <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="mobile-social-icon">
+            <img src="assets/icons/ui/X_white_icon.svg" alt="X (Twitter)" class="mobile-social-icon">
           </a>
           <a href="https://www.linkedin.com/company/altiora-systems" class="mobile-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="mobile-social-icon">
+            <img src="assets/icons/ui/linkedin_white_icon.svg" alt="LinkedIn" class="mobile-social-icon">
           </a>
         </div>
       </div>
@@ -90,9 +90,7 @@
       </div>
       
       <div class="products-figma-form-container scroll-reveal">
-        <form class="products-figma-form" id="notify-form" method="POST" action="YOUR_GOOGLE_SHEETS_SCRIPT_URL">
-          <input type="hidden" name="_next" value="/thank-you.html">
-          <input type="hidden" name="_subject" value="Product Launch Notification Request">
+        <form class="products-figma-form" id="notify-form">
           <div class="products-email-container">
             <input 
               type="email" 
@@ -123,6 +121,7 @@
             NOTIFY ME
           </button>
         </form>
+        <div id="email-message" class="email-message" aria-live="polite"></div>
       </div>
     </div>
   </main>
@@ -132,16 +131,76 @@
       <p class="footer-text">© <span id="current-year-products"></span> Altiora Systems LLC. All rights reserved.</p>
       <div class="footer-social">
         <a href="https://x.com/AltioraSystems" class="footer-social-link" aria-label="Twitter/X" target="_blank" rel="noopener">
-          <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="footer-social-icon">
+          <img src="assets/icons/ui/X_white_icon.svg" alt="X (Twitter)" class="footer-social-icon">
         </a>
         <a href="https://www.linkedin.com/company/altiora-systems" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="footer-social-icon">
+          <img src="assets/icons/ui/linkedin_white_icon.svg" alt="LinkedIn" class="footer-social-icon">
         </a>
       </div>
     </div>
   </footer>
   
-  <script>document.getElementById('current-year-products').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('current-year-products').textContent = new Date().getFullYear();
+
+    async function submitEmail(event) {
+      event.preventDefault(); // Prevent default form submission
+      const email = document.getElementById('email').value; // Corrected ID
+      const endpoint = "https://script.google.com/macros/s/AKfycbxMtHQ5h6LNtIZmR9zPQuf3DQuGGBImS7Wll5GfK8Ox4kYg9C3VYj2U24WExBdUj0z-/exec"; 
+
+      if (!email || !validateEmail(email)) {
+        alert("Please enter a valid email.");
+        return;
+      }
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: new URLSearchParams({ email: email }),
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        });
+
+        const text = await response.text();
+        const messageElement = document.getElementById('email-message');
+        if (text === "Success") {
+          messageElement.textContent = "Thanks for signing up!";
+          messageElement.style.color = "#28a745"; // Green color for success
+          messageElement.style.display = "block";
+        } else {
+          messageElement.textContent = "Error: " + text;
+          messageElement.style.color = "#dc3545"; // Red color for error
+          messageElement.style.display = "block";
+        }
+        
+        // Clear message after a few seconds
+        setTimeout(() => {
+          messageElement.textContent = "";
+          messageElement.style.display = "none";
+        }, 5000); // Message disappears after 5 seconds
+
+        document.getElementById('email').value = ""; // Corrected ID
+      } catch (err) {
+        console.error(err);
+        const messageElement = document.getElementById('email-message');
+        messageElement.textContent = "Something went wrong.";
+        messageElement.style.color = "#dc3545"; // Red color for error
+        messageElement.style.display = "block";
+        setTimeout(() => {
+          messageElement.textContent = "";
+          messageElement.style.display = "none";
+        }, 5000); // Message disappears after 5 seconds
+      }
+    }
+
+    function validateEmail(email) {
+      return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+    }
+
+    // Add event listener to the form
+    document.getElementById('notify-form').addEventListener('submit', submitEmail);
+  </script>
   <script src="js/main.js"></script>
   <script src="js/products.js"></script>
   <script src="js/micro-interactions-base.js"></script>
