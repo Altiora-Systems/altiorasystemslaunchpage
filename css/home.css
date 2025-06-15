@@ -1,0 +1,744 @@
+/* ================================
+   HOME PAGE STYLES (index.html)
+   ================================ */
+
+/* ================================
+   HERO SECTION
+   ================================ */
+.hero {
+  background: linear-gradient(90deg, #2f394d 0%, #85ccff 100%);
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 80px 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.hero-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  margin-bottom: 32px;
+  text-align: left;
+  opacity: 0.9;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFD36E;
+  color: #2F394D;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  border: none;
+  border-radius: 24px;
+  padding: 14px 28px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-cta:hover {
+  background: #ffca45;
+  color: #2F394D !important;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-mockup {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   PRODUCTS SECTION
+   ================================ */
+.products-section {
+  background: #F9FAFB;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex; 
+  flex-direction: column; 
+}
+
+.products-header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-title {
+  color: #1A365D;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35px;
+  margin-bottom: 15px;
+}
+
+.products-subtitle {
+  color: #4A5568;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  max-width: 862px;
+  margin: 0 auto;
+}
+
+.products-grid-new {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.product-card-new {
+  width: 584px;
+  background: white;
+  box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.10);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.product-logo-new {
+  margin-bottom: 16px;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.product-logo-img-new {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.product-logo-img-new.barrellink-logo {
+  width: 345.72px;
+  height: 60.84px;
+}
+
+.product-logo-img-new.altioraconnect-logo {
+  width: 370px;
+  height: 88px;
+}
+
+.product-card-title-new {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1A365D;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.product-description-new {
+  color: #4A5568;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.product-features-new {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.product-feature-new {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.feature-icon-new {
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.feature-text-new {
+  color: #4A5568;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.product-btn {
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+/* ================================
+   STATISTICS SECTION
+   ================================ */
+.statistics {
+    background-color: #F7F7F7;
+    padding: 80px 0;
+}
+
+.statistics-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+.statistics-title {
+    color: #1A365D;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0;
+    width: auto;
+    white-space: nowrap;
+    max-width: 100vw;
+    display: block;
+}
+
+.stats-grid {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 40px 32px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.stat-card-blue {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  color: #ffffff;
+}
+
+.stat-card-yellow {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #1f2937;
+}
+
+.stat-value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.stat-description {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ================================
+   CTA SECTION
+   ================================ */
+.cta-section {
+  background: #F9FAFB;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.cta-card {
+  background: #FFD36E;
+  border-radius: 0;
+  box-shadow: 0px 75px 150px 0px rgba(10, 13, 18, 0.14);
+  padding: 0;
+  max-width: 860.5px;
+  margin: 0 auto;
+  position: relative;
+  height: 185px;
+  display: flex;
+  align-items: center;
+}
+
+.cta-content {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.cta-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  color: #000000;
+  margin: 0;
+  position: absolute;
+  left: 225.75px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 351px;
+  text-align: center;
+}
+
+.cta-divider {
+  width: 5px;
+  height: 152.03px;
+  background: #000000;
+  position: absolute;
+  left: 430.25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cta-buttons {
+  position: absolute;
+  left: 470.25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cta-section .cta-btn {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  line-height: 35px !important;
+  padding: 0 !important;
+  border: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  border-radius: 0 !important;
+  box-shadow: 0px 4px 4px -1px rgba(12, 12, 13, 0.1), 0px 4px 4px -1px rgba(12, 12, 13, 0.05) !important;
+  text-align: center !important;
+  width: 308px !important;
+  height: 57px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.cta-section .cta-btn-primary {
+  background: #2F394D !important;
+  color: #ffffff !important;
+}
+
+.cta-section .cta-btn-primary:hover {
+  background: #374151 !important;
+  transform: translateY(-2px);
+  box-shadow: 0px 75px 150px 0px rgba(10, 13, 18, 0.2) !important;
+}
+
+.cta-section .cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ================================
+   HOME PAGE RESPONSIVE DESIGN
+   ================================ */
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .hero-title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  
+  .products-grid-new {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .product-card-new {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .product-logo-img-new.barrellink-logo {
+    width: 310px;
+    height: 55px;
+  }
+  
+  .product-logo-img-new.altioraconnect-logo {
+    width: 333px;
+    height: 79px;
+  }
+  
+  .cta-card {
+    padding: 32px 40px;
+    height: auto;
+    min-height: 160px;
+  }
+
+  .cta-content {
+    flex-direction: column;
+    gap: 32px;
+    position: static;
+  }
+  
+  .cta-title {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  
+  .cta-divider {
+    position: static;
+    transform: none;
+    width: 120px;
+    height: 5px;
+    align-self: center;
+  }
+
+  .cta-buttons {
+    position: static;
+    transform: none;
+  }
+
+  .cta-btn {
+    width: 250px;
+    font-size: 18px;
+  }
+  
+  .cta-section .cta-btn {
+    width: 250px !important;
+    height: 50px !important;
+    font-size: 18px !important;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 0;
+  }
+  
+  .hero-container {
+    padding: 0 24px;
+  }
+  
+  .hero-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .products-container {
+    padding: 0 24px;
+  }
+  
+  .products-grid-new {
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .product-card_new {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .products-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  .stats-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .stat-card {
+    min-width: auto;
+    max-width: none;
+  }
+  
+  .statistics-title {
+    font-size: 24px;
+    line-height: 32px;
+    white-space: normal;
+  }
+  
+  .cta-container {
+    padding: 0 24px;
+  }
+
+  .cta-card {
+    padding: 24px 32px;
+    height: auto;
+    min-height: 140px;
+  }
+  
+  .cta-title {
+    position: static;
+    transform: none;
+    width: 100%;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .cta-divider {
+    position: static;
+    transform: none;
+    align-self: center;
+  }
+  
+  .cta-buttons {
+    position: static;
+    transform: none;
+  }
+
+  .cta-btn {
+    width: 200px;
+    font-size: 16px;
+    padding: 12px 24px;
+    height: 48px;
+  }
+  
+  .cta-card {
+    max-width: 100%;
+    height: auto;
+    min-height: 140px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+  }
+  
+  .cta-content {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+  
+  .cta-title {
+    position: static;
+    transform: none;
+    width: 100%;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .cta-divider {
+    display: none;
+  }
+  
+  .cta-buttons {
+    position: static;
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cta-section .cta-btn {
+    width: 200px !important;
+    height: 45px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 0 16px;
+  }
+  
+  .products-container {
+    padding: 0 16px;
+  }
+  
+  .product-card-new {
+    padding: 20px 24px;
+    width: 100%;
+  }
+  
+  .product-logo-new {
+    margin-bottom: 12px;
+    min-height: 60px;
+  }
+  
+  .product-logo-img-new.barrellink-logo {
+    width: 280px;
+    height: 49px;
+  }
+  
+  .product-logo-img-new.altioraconnect-logo {
+    width: 300px;
+    height: 71px;
+  }
+  
+  .product-description-new {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  
+  .feature-text-new {
+    font-size: 14px;
+  }
+  
+  .statistics-container {
+    padding: 0 16px;
+  }
+  
+  .cta-container {
+    padding: 0 16px;
+  }
+  
+  .stat-card {
+    padding: 16px 8px;
+    min-height: 120px;
+    font-size: 18px;
+  }
+  .stat-number {
+    font-size: 18px;
+  }
+  .stat-description {
+    font-size: 12px;
+  }
+  
+  .cta-section {
+    padding: 60px 0;
+  }
+  
+  .cta-container {
+    padding: 0 20px;
+  }
+  
+  .cta-card {
+    padding: 25px 15px;
+    min-height: 120px;
+  }
+  
+  .cta-title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .cta-section .cta-btn {
+    width: 180px !important;
+    height: 40px !important;
+    font-size: 14px !important;
+  }
+}

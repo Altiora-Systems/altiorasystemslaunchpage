@@ -1182,27 +1182,27 @@ body {
    ================================ */
 
 /* ================================
-   PRODUCTS PAGE - FIGMA EXACT MATCH
-   ================================ */
-
-/* ================================
-   PRODUCTS PAGE - FIGMA EXACT MATCH
+   PRODUCTS PAGE - CLEAN FIGMA IMPLEMENTATION
    ================================ */
 
 .products-figma-main {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     min-height: 100vh;
-    padding-top: 80px;
-    position: relative;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0 80px 0;
 }
 
 .products-figma-container {
-    position: absolute;
-    top: 248px;
-    left: calc(16.6667% + 24px);
-    width: calc(100% - 2 * (16.6667% + 24px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     max-width: 1000px;
+    width: 100%;
+    padding: 0 32px;
+    margin: 0 auto;
 }
 
 .products-figma-title {
@@ -1212,28 +1212,19 @@ body {
     line-height: 0.9;
     color: #31456A;
     text-align: center;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 910px;
-    white-space: nowrap;
+    margin: 0 0 60px 0;
+    max-width: 100%;
 }
 
 .products-figma-description {
-    position: absolute;
-    top: 424px;
-    left: calc(50% + 5.5px);
-    transform: translateX(-50%);
-    width: 923px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 1.4;
     color: #31456A;
     text-align: center;
-    margin: 0;
+    margin: 0 0 80px 0;
+    max-width: 923px;
 }
 
 .products-figma-description .barrel-text {
@@ -1261,24 +1252,22 @@ body {
 }
 
 .products-figma-form-container {
-    position: absolute;
-    top: 586px;
-    left: calc(16.6667% + 88px);
-    width: 794.552px;
+    width: 100%;
+    max-width: 795px;
 }
 
 .products-figma-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 74px;
+    gap: 50px;
     width: 100%;
 }
 
 .products-email-container {
-    width: 794.552px;
-    height: 71.396px;
-    position: relative;
+    width: 100%;
+    max-width: 795px;
+    height: 71px;
     display: flex;
     align-items: center;
 }
@@ -1289,11 +1278,10 @@ body {
     background: #E3EDF7;
     border: none;
     border-radius: 16px;
-    padding: 0 32.597px;
-    font-family: 'SF Pro Display', sans-serif;
+    padding: 0 33px;
+    font-family: 'SF Pro Display', 'Source Sans Pro', sans-serif;
     font-weight: 400;
     font-size: 18px;
-    line-height: 21.48px;
     color: #31456A;
     outline: none;
     box-sizing: border-box;
@@ -1302,9 +1290,6 @@ body {
 
 .products-email-input::placeholder {
     color: #31456A;
-    font-family: 'SF Pro Display', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
     opacity: 0.8;
 }
 
@@ -1313,12 +1298,8 @@ body {
 }
 
 .products-notify-button {
-    position: absolute;
-    top: 732px;
-    left: calc(50% + 5.4477px);
-    transform: translateX(-50%);
-    width: 230.896px;
-    height: 59.086px;
+    width: 231px;
+    height: 59px;
     background: #FFD36E;
     border: none;
     border-radius: 40px;
@@ -1331,20 +1312,19 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0.008px;
     color: #000000;
     text-transform: uppercase;
+    letter-spacing: 0.008px;
 }
 
 .products-notify-button:hover {
     background: #ffca45;
-    transform: translateX(-50%) translateY(-2px);
+    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 211, 110, 0.4);
 }
 
 .products-notify-button:active {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .products-notify-icon {
@@ -1354,322 +1334,185 @@ body {
 }
 
 /* ================================
-   PRODUCTS PAGE - FIGMA EXACT STYLES
-   ================================ */
-.products-figma-main {
-  background-color: #ffffff;
-  min-height: 100vh;
-  width: 100vw;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 80px;
-}
-
-.products-figma-container {
-  position: absolute;
-  top: 248px;
-  left: calc(16.6667% + 24px);
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-}
-
-.products-figma-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 128px;
-  line-height: 115.2px; /* 0.9 line height from Figma */
-  color: #31456a;
-  text-align: center;
-  margin: 0;
-  white-space: nowrap;
-  width: 910px;
-  position: relative;
-  top: 0;
-  left: calc(50% - 455px); /* Center 910px width */
-}
-
-.products-figma-description {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 33.6px; /* 1.4 line height */
-  color: #31456a;
-  text-align: center;
-  margin: 0;
-  width: 923px;
-  position: relative;
-  top: 176px; /* 424px from container top - 248px = 176px relative */
-  left: calc(50% - 461.5px); /* Center 923px width */
-}
-
-.products-figma-description .barrel-text {
-  color: #003c7b;
-  font-size: 32px;
-  font-weight: 600;
-}
-
-.products-figma-description .link-text {
-  color: #fa8800;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.products-figma-description .altiora-text {
-  color: #31456a;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.products-figma-description .connect-text {
-  color: #00b0f0;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.products-figma-form-container {
-  position: absolute;
-  top: 338px; /* 586px from container top - 248px = 338px relative */
-  left: calc(16.6667% + 88px);
-  width: 794.552px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 74px;
-}
-
-/* ================================
    PRODUCTS PAGE RESPONSIVE DESIGN
    ================================ */
 
 @media (max-width: 1440px) {
-  .products-figma-main {
-    padding-top: 100px;
-  }
-  
-  .products-figma-container {
-    position: relative;
-    top: auto;
-    left: auto;
-    padding: 60px 100px 0 100px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .products-figma-title {
-    font-size: 100px;
-    line-height: 90px;
-    width: auto;
-    position: relative;
-    top: auto;
-    left: auto;
-    margin-bottom: 80px;
-  }
-  
-  .products-figma-description {
-    font-size: 22px;
-    line-height: 30px;
-    width: auto;
-    max-width: 800px;
-    position: relative;
-    top: auto;
-    left: auto;
-    margin-bottom: 80px;
-  }
-  
-  .products-figma-description .barrel-text,
-  .products-figma-description .link-text,
-  .products-figma-description .altiora-text,
-  .products-figma-description .connect-text {
-    font-size: 28px;
-  }
-  
-  .products-figma-form-container {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: auto;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  .products-email-container {
-    width: 100%;
-    max-width: 700px;
-    height: 65px;
-  }
-  
-  .products-notify-button {
-    width: 210px;
-    height: 55px;
-  }
+    .products-figma-title {
+        font-size: 100px;
+        line-height: 0.9;
+        margin-bottom: 50px;
+    }
+    
+    .products-figma-description {
+        font-size: 22px;
+        margin-bottom: 70px;
+        max-width: 800px;
+    }
+    
+    .products-figma-description .barrel-text,
+    .products-figma-description .link-text,
+    .products-figma-description .altiora-text,
+    .products-figma-description .connect-text {
+        font-size: 28px;
+    }
+    
+    .products-email-container {
+        max-width: 700px;
+        height: 65px;
+    }
+    
+    .products-notify-button {
+        width: 210px;
+        height: 55px;
+    }
 }
 
 @media (max-width: 1024px) {
-  .products-figma-main {
-    padding-top: 80px;
-  }
-  
-  .products-figma-container {
-    padding: 40px 60px 0 60px;
-  }
-  
-  .products-figma-title {
-    font-size: 80px;
-    line-height: 72px;
-    margin-bottom: 60px;
-  }
-  
-  .products-figma-description {
-    font-size: 20px;
-    line-height: 28px;
-    margin-bottom: 60px;
-  }
-  
-  .products-figma-description .barrel-text,
-  .products-figma-description .link-text,
-  .products-figma-description .altiora-text,
-  .products-figma-description .connect-text {
-    font-size: 24px;
-  }
-  
-  .products-email-container {
-    width: 100%;
-    max-width: 600px;
-    height: 60px;
-  }
-  
-  .products-email-input {
-    padding: 0 24px;
-    font-size: 16px;
-  }
-  
-  .products-notify-button {
-    width: 190px;
-    height: 50px;
-    font-size: 15px;
-  }
-  
-  .products-notify-icon {
-    width: 20px;
-    height: 20px;
-  }
+    .products-figma-container {
+        padding: 0 60px;
+    }
+    
+    .products-figma-title {
+        font-size: 80px;
+        margin-bottom: 40px;
+    }
+    
+    .products-figma-description {
+        font-size: 20px;
+        margin-bottom: 60px;
+        max-width: 600px;
+    }
+    
+    .products-figma-description .barrel-text,
+    .products-figma-description .link-text,
+    .products-figma-description .altiora-text,
+    .products-figma-description .connect-text {
+        font-size: 24px;
+    }
+    
+    .products-email-container {
+        max-width: 600px;
+        height: 60px;
+    }
+    
+    .products-email-input {
+        padding: 0 24px;
+        font-size: 16px;
+    }
+    
+    .products-notify-button {
+        width: 190px;
+        height: 50px;
+        font-size: 15px;
+    }
+    
+    .products-notify-icon {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 @media (max-width: 768px) {
-  .products-figma-main {
-    padding-top: 80px;
-  }
-  
-  .products-figma-container {
-    padding: 30px 40px 0 40px;
-  }
-  
-  .products-figma-title {
-    font-size: 60px;
-    line-height: 54px;
-    margin-bottom: 40px;
-  }
-  
-  .products-figma-description {
-    font-size: 18px;
-    line-height: 25px;
-    margin-bottom: 50px;
-  }
-  
-  .products-figma-description .barrel-text,
-  .products-figma-description .link-text,
-  .products-figma-description .altiora-text,
-  .products-figma-description .connect-text {
-    font-size: 20px;
-  }
-  
-  .products-email-container {
-    width: 100%;
-    max-width: 500px;
-    height: 55px;
-  }
-  
-  .products-email-input {
-    padding: 0 20px;
-    font-size: 15px;
-  }
-  
-  .products-notify-button {
-    width: 170px;
-    height: 45px;
-    font-size: 14px;
-  }
-  
-  .products-notify-icon {
-    width: 18px;
-    height: 18px;
-  }
-  
-  .products-figma-form {
-    gap: 50px;
-  }
+    .products-figma-container {
+        padding: 0 40px;
+    }
+    
+    .products-figma-title {
+        font-size: 60px;
+        margin-bottom: 30px;
+    }
+    
+    .products-figma-description {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+    
+    .products-figma-description .barrel-text,
+    .products-figma-description .link-text,
+    .products-figma-description .altiora-text,
+    .products-figma-description .connect-text {
+        font-size: 20px;
+    }
+    
+    .products-email-container {
+        max-width: 500px;
+        height: 55px;
+    }
+    
+    .products-email-input {
+        padding: 0 20px;
+        font-size: 15px;
+    }
+    
+    .products-notify-button {
+        width: 170px;
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    .products-notify-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .products-figma-form {
+        gap: 40px;
+    }
 }
 
 @media (max-width: 480px) {
-  .products-figma-main {
-    padding-top: 80px;
-  }
-  
-  .products-figma-container {
-    padding: 20px 20px 0 20px;
-  }
-  
-  .products-figma-title {
-    font-size: 48px;
-    line-height: 43px;
-    margin-bottom: 30px;
-  }
-  
-  .products-figma-description {
-    font-size: 16px;
-    line-height: 22px;
-    margin-bottom: 40px;
-  }
-  
-  .products-figma-description .barrel-text,
-  .products-figma-description .link-text,
-  .products-figma-description .altiora-text,
-  .products-figma-description .connect-text {
-    font-size: 18px;
-  }
-  
-  .products-email-container {
-    width: 100%;
-    max-width: 350px;
-    height: 50px;
-  }
-  
-  .products-email-input {
-    padding: 0 16px;
-    font-size: 14px;
-  }
-  
-  .products-notify-button {
-    width: 150px;
-    height: 40px;
-    font-size: 12px;
-  }
-  
-  .products-notify-icon {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .products-figma-form {
-    gap: 30px;
-  }
+    .products-figma-main {
+        padding: 100px 0 60px 0;
+    }
+    
+    .products-figma-container {
+        padding: 0 20px;
+    }
+    
+    .products-figma-title {
+        font-size: 48px;
+        line-height: 0.9;
+        margin-bottom: 25px;
+    }
+    
+    .products-figma-description {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 40px;
+    }
+    
+    .products-figma-description .barrel-text,
+    .products-figma-description .link-text,
+    .products-figma-description .altiora-text,
+    .products-figma-description .connect-text {
+        font-size: 18px;
+    }
+    
+    .products-email-container {
+        max-width: 350px;
+        height: 50px;
+    }
+    
+    .products-email-input {
+        padding: 0 16px;
+        font-size: 14px;
+    }
+    
+    .products-notify-button {
+        width: 150px;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    .products-notify-icon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .products-figma-form {
+        gap: 30px;
+    }
 }
 
 /* ================================
