@@ -66,12 +66,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const firstName = document.getElementById('firstName').value.trim();
             const lastName = document.getElementById('lastName').value.trim();
+            const companyName = document.getElementById('companyName').value.trim();
             const email = document.getElementById('contactEmail').value.trim();
             const message = document.getElementById('message').value.trim();
+            const agreeComms = document.getElementById('agreeComms').checked;
             
             // Basic validation
-            if (!firstName || !lastName || !email || !message) {
+            if (!firstName || !lastName || !companyName || !email || !message) {
                 showContactError('Please fill in all required fields.');
+                return;
+            }
+            
+            if (!agreeComms) {
+                showContactError('Please agree to receive communications from Altiora Systems.');
                 return;
             }
             
@@ -95,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 I would like to get in touch with you.
 
 Name: ${firstName} ${lastName}
+Company: ${companyName}
 Email: ${email}
 
 Message:
@@ -119,6 +127,87 @@ Thank you!`);
         });
     }
 });
+
+// Contact form functionality for simplified Figma design
+function clearForm() {
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.reset();
+  }
+}
+
+// Form validation for new contact form
+function validateContactForm() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const agreeComms = document.getElementById('agreeComms').checked;
+  
+  if (!name || !email || !subject || !message || !agreeComms) {
+    alert('Please fill in all required fields and agree to receive communications.');
+    return false;
+  }
+  
+  if (!isValidEmail(email)) {
+    alert('Please enter a valid email address.');
+    return false;
+  }
+  
+  return true;
+}
+
+// Enhanced contact form handling for new design
+document.addEventListener('DOMContentLoaded', function() {
+  const newContactForm = document.getElementById('contact-form');
+  
+  if (newContactForm && !newContactForm.hasAttribute('data-old-form')) {
+    newContactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (!validateContactForm()) {
+        return;
+      }
+      
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      
+      // Create email content
+      const emailSubject = encodeURIComponent(`Contact Form: ${subject}`);
+      const emailBody = encodeURIComponent(`Hello,
+
+I would like to get in touch with you.
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+Thank you!`);
+      
+      const mailtoLink = `mailto:contact@altiorasystems.com?subject=${emailSubject}&body=${emailBody}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show success message and reset form
+      alert('Thank you! Your email client should open to send your message.');
+      clearForm();
+    });
+  }
+});
+
+// Clear form function for contact page
+function clearForm() {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.reset();
+    }
+}
 
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
