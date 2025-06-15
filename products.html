@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Altiora Systems</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/favicons/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/icons/favicons/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/favicons/apple-touch-icon.png">
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo-section">
+        <img src="assets/icons/ui/Wordmark Logo.svg" alt="Altiora Systems" class="logo">
+      </a>
+      <nav class="navigation">
+        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="products.html" class="nav-link active">PRODUCTS</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      <div class="social-icons">
+        <a href="https://x.com/AltioraSystems" class="social-link" aria-label="Twitter/X" target="_blank" rel="noopener">
+          <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="social-icon">
+        </a>
+        <a href="https://www.linkedin.com/company/altiora-systems" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="social-icon">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="products-coming-soon-main">
+    <section class="products-coming-soon">
+      <div class="products-coming-soon-container">
+        <h1 class="products-coming-soon-title">Coming Soon</h1>
+        <p class="products-coming-soon-subtitle">
+          Our products <span class="product-name-orange">Barrel Link</span> and <span class="product-name-blue">AltioraConnect</span> are currently in development. We anticipate launching alpha testing in August 2025, with a public release by late Q4 2025.
+        </p>
+        
+        <form class="products-coming-soon-form" id="notify-form">
+          <div class="email-input-container">
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="Email" 
+              class="email-input"
+              required
+            >
+          </div>
+          <button type="submit" class="notify-button">
+            <svg class="notify-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.7917 0.208333C15.8333 0.125 15.8333 0.0416667 15.7917 0C15.75 -0.0416667 15.6667 -0.0416667 15.5833 0L0.25 6.75C0.166667 6.79167 0.125 6.83333 0.125 6.91667C0.125 7 0.166667 7.04167 0.25 7.08333L6.375 9.625L8.91667 15.75C8.95833 15.8333 9 15.875 9.08333 15.875C9.16667 15.875 9.20833 15.8333 9.25 15.75L16 0.416667C16.0417 0.333333 16.0417 0.25 16 0.208333C15.9583 0.166667 15.875 0.166667 15.7917 0.208333ZM9.08333 14.5417L7.04167 9.45833L13.5417 2.95833L9.08333 14.5417ZM13.0417 2.45833L6.54167 8.95833L1.45833 6.91667L13.0417 2.45833Z" fill="currentColor"/>
+            </svg>
+            NOTIFY ME
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-text">© <span id="current-year-products"></span> Altiora Systems LLC. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://x.com/AltioraSystems" class="footer-social-link" aria-label="Twitter/X" target="_blank" rel="noopener">
+          <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="footer-social-icon">
+        </a>
+        <a href="https://www.linkedin.com/company/altiora-systems" class="footer-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="footer-social-icon">
+        </a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>document.getElementById('current-year-products').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
+</body>
+</html>
