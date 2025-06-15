@@ -34,20 +34,15 @@
   </header>
 
   <main class="contact-main">
-    <section class="contact-hero">
-      <div class="contact-hero-container">
-        
-        <!-- Background decorative elements -->
-        <div class="contact-bg-decoration contact-bg-shape-1"></div>
-        <div class="contact-bg-decoration contact-bg-shape-2"></div>
-        <div class="contact-bg-decoration contact-bg-shape-3"></div>
+    <section class="contact-section">
+      <div class="contact-container">
         
         <!-- Main contact card -->
         <div class="contact-card">
           
-          <!-- Left side - Contact form -->
+          <!-- Left side - Contact form (Dark section) -->
           <div class="contact-form-section">
-            <!-- Mobile menu icon -->
+            <!-- Mobile hamburger menu -->
             <div class="contact-mobile-menu">
               <div class="hamburger-line"></div>
               <div class="hamburger-line"></div>
@@ -74,22 +69,23 @@
                 
                 <div class="form-group">
                   <label for="email" class="form-label">Email address</label>
-                  <input type="email" id="email" name="email" class="form-input" required>
+                  <input type="email" id="contactEmail" name="email" class="form-input" required>
                 </div>
                 
                 <div class="form-group">
                   <label for="message" class="form-label">Message</label>
                   <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
                 </div>
-                
-                <button type="submit" class="contact-submit-btn">SEND MESSAGE</button>
               </form>
               
-              <p class="contact-direct-email">Or Contact us directly at contact@altiorasystems.com</p>
+              <div class="contact-form-bottom">
+                <button type="submit" class="contact-submit-btn" form="contact-form">SEND MESSAGE</button>
+                <p class="contact-direct-email">Or Contact us directly at contact@altiorasystems.com</p>
+              </div>
             </div>
           </div>
           
-          <!-- Right side - Logo and branding -->
+          <!-- Right side - Logo and branding (Light section) -->
           <div class="contact-logo-section">
             <!-- Navigation arrow -->
             <div class="contact-nav-arrow">
@@ -98,14 +94,13 @@
               </svg>
             </div>
             
-            <!-- Decorative elements -->
-            <div class="contact-decoration contact-decoration-triangle"></div>
-            <div class="contact-decoration contact-decoration-polygon"></div>
-            
             <!-- Main logo -->
             <div class="contact-logo-container">
-              <img src="assets/icons/ui/Wordmark Logo.svg" alt="Altiora Systems" class="contact-logo">
+              <img src="assets/images/logos/103610_Altiora_Flat_B_R_01.png" alt="Altiora Systems" class="contact-logo">
             </div>
+            
+            <!-- Yellow accent element -->
+            <div class="contact-accent-triangle"></div>
           </div>
           
         </div>
