@@ -368,6 +368,8 @@
   display: flex;
   align-items: center;
   height: 100%;
+  justify-content: space-between;
+  padding: 0 40px;
 }
 
 .cta-title {
@@ -377,29 +379,25 @@
   line-height: 35px;
   color: #000000;
   margin: 0;
-  position: absolute;
-  left: 225.75px;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 351px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  max-width: 350px;
 }
 
 .cta-divider {
   width: 5px;
   height: 152.03px;
   background: #000000;
-  position: absolute;
-  left: 430.25px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin: 0 20px;
 }
 
 .cta-buttons {
-  position: absolute;
-  left: 470.25px;
-  top: 50%;
-  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta-section .cta-btn {
@@ -561,6 +559,13 @@
     line-height: 36px;
   }
   
+  .products-subtitle {
+    font-size: 18px;
+    line-height: 26px;
+    max-width: 100%;
+    padding: 0 8px;
+  }
+  
   .stats-grid {
     flex-direction: column;
     gap: 20px;
@@ -617,8 +622,6 @@
     max-width: 100%;
     height: auto;
     min-height: 140px;
-    flex-direction: column;
-    gap: 20px;
     padding: 30px 20px;
   }
   
@@ -626,16 +629,15 @@
     flex-direction: column;
     gap: 20px;
     height: auto;
+    padding: 0;
   }
   
   .cta-title {
-    position: static;
-    transform: none;
-    width: 100%;
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    max-width: none;
   }
   
   .cta-divider {
@@ -643,10 +645,7 @@
   }
   
   .cta-buttons {
-    position: static;
-    transform: none;
     width: 100%;
-    display: flex;
     justify-content: center;
   }
   
@@ -665,6 +664,18 @@
   
   .products-container {
     padding: 0 16px;
+  }
+  
+  .products-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  .products-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 4px;
   }
   
   .product-card-new {
@@ -740,5 +751,25 @@
     width: 180px !important;
     height: 40px !important;
     font-size: 14px !important;
+  }
+}
+
+/* Extra small mobile styles */
+@media (max-width: 390px) {
+  .products-title {
+    font-size: 22px;
+    line-height: 28px;
+    padding: 0 8px;
+  }
+  
+  .products-subtitle {
+    font-size: 15px;
+    line-height: 22px;
+    max-width: 100%;
+    padding: 0 8px;
+  }
+  
+  .products-container {
+    padding: 0 12px;
   }
 }

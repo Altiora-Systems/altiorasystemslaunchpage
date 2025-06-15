@@ -1,0 +1,129 @@
+/* ================================
+   BASE ADVANCED INTERACTIONS
+   ================================ */
+
+/* ================================
+   SCROLL-BASED INTERACTIONS
+   ================================ */
+
+/* Scroll-triggered fade-in animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Text reveal animation */
+.text-reveal {
+    overflow: hidden;
+    position: relative;
+}
+
+.text-reveal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-brand-accent);
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+}
+
+.text-reveal.animate::before {
+    transform: translateX(100%);
+}
+
+/* Image reveal with mask */
+.image-reveal {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-reveal img {
+    transform: scale(1.2);
+    transition: transform 1s ease;
+}
+
+.image-reveal.revealed img {
+    transform: scale(1);
+}
+
+.image-reveal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-brand-accent) 0%, #85ccff 100%);
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+    z-index: 2;
+}
+
+.image-reveal.revealed::before {
+    transform: translateX(100%);
+}
+
+/* ================================
+   STAGGERED ANIMATIONS
+   ================================ */
+
+.stagger-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.stagger-fade-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal-grid .stagger-fade-in:nth-child(1) { transition-delay: 0.1s; }
+.scroll-reveal-grid .stagger-fade-in:nth-child(2) { transition-delay: 0.2s; }
+.scroll-reveal-grid .stagger-fade-in:nth-child(3) { transition-delay: 0.3s; }
+.scroll-reveal-grid .stagger-fade-in:nth-child(4) { transition-delay: 0.4s; }
+.scroll-reveal-grid .stagger-fade-in:nth-child(5) { transition-delay: 0.5s; }
+.scroll-reveal-grid .stagger-fade-in:nth-child(6) { transition-delay: 0.6s; }
+
+/* ================================
+   PERFORMANCE OPTIMIZATIONS
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .text-reveal,
+    .image-reveal,
+    .stagger-fade-in {
+        transition: none;
+        animation: none;
+    }
+    
+    .text-reveal::before,
+    .image-reveal::before {
+        display: none;
+    }
+}
+
+/* GPU acceleration for smooth animations */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}

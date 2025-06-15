@@ -1,0 +1,46 @@
+/* ================================
+   ABOUT PAGE MICRO-INTERACTIONS
+   ================================ */
+
+/* Team cards simple hover effect */
+.team-card-hover {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.team-card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-card-hover:active {
+    transform: translateY(-4px);
+}
+
+/* LinkedIn icon simple hover */
+.linkedin-icon-hover {
+    transition: all 0.3s ease;
+}
+
+.linkedin-icon-hover:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Mission section reveal */
+.mission-content-reveal {
+    transition: all 0.8s ease;
+}
+
+.mission-content-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Values cards - removed stagger effects to prevent disappearing */
+/* Override stagger-fade-in opacity for values cards to make them visible */
+.about-values-grid .about-value-card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+}

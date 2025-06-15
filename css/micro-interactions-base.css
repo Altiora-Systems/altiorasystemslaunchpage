@@ -1,0 +1,232 @@
+/* ================================
+   BASE MICRO-INTERACTIONS
+   ================================ */
+
+/* ================================
+   ENHANCED BUTTON INTERACTIONS
+   ================================ */
+
+/* Simple hover up effect for all CTA buttons */
+.btn-hover-up {
+    transition: all 0.3s ease;
+}
+
+.btn-hover-up:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-hover-up:active {
+    transform: translateY(-1px);
+}
+
+/* Enhanced CTA button base styling */
+.cta-button-enhanced {
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cta-button-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button-enhanced:hover::before {
+    left: 100%;
+}
+
+/* ================================
+   LOADING STATES & INDICATORS
+   ================================ */
+
+/* Button loading state */
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+    color: transparent !important;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: btnSpinner 0.8s linear infinite;
+}
+
+@keyframes btnSpinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================================
+   FORM ENHANCEMENTS
+   ================================ */
+
+/* Input focus ripple */
+.input-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.input-ripple::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-brand-accent);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.input-ripple:focus-within::after {
+    width: 100%;
+}
+
+/* Form validation states */
+.form-input-valid {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-input-invalid {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Enhanced focus effects */
+.form-input:focus,
+.form-textarea:focus {
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+/* ================================
+   SCROLL PROGRESS INDICATOR
+   ================================ */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-brand-accent) 0%, #85ccff 100%);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* ================================
+   NOTIFICATION ENHANCEMENTS
+   ================================ */
+
+.notification-enhanced {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary-brand-accent);
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10000;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.notification-enhanced.show {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+}
+
+.notification-enhanced.hide {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+}
+
+.notification-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.notification-success {
+    border-left-color: #10b981;
+}
+
+.notification-error {
+    border-left-color: #ef4444;
+}
+
+.notification-warning {
+    border-left-color: #f59e0b;
+}
+
+/* ================================
+   RESPONSIVE MICRO-INTERACTIONS
+   ================================ */
+
+@media (max-width: 768px) {
+    .notification-enhanced {
+        left: 20px;
+        right: 20px;
+        transform: translateY(-100%) scale(0.8);
+    }
+    
+    .notification-enhanced.show {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-hover-up,
+    .cta-button-enhanced,
+    .input-ripple::after,
+    .notification-enhanced {
+        transition: none;
+        animation: none;
+    }
+    
+    .scroll-progress {
+        display: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .notification-enhanced {
+        background: #2d3748;
+        color: #e2e8f0;
+    }
+}

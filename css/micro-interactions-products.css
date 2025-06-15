@@ -1,0 +1,43 @@
+/* ================================
+   PRODUCTS PAGE MICRO-INTERACTIONS
+   ================================ */
+
+/* Coming soon title reveal */
+.products-title-reveal {
+    transition: all 0.8s ease;
+}
+
+.products-title-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form container reveal */
+.form-container-reveal {
+    transition: all 0.6s ease;
+}
+
+.form-container-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Email input enhanced focus */
+.email-input-enhanced {
+    transition: all 0.3s ease;
+}
+
+.email-input-enhanced:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px rgba(var(--primary-brand-accent-rgb), 0.1);
+}
+
+/* Notify button - keep existing hover behavior */
+.notify-button-enhanced {
+    transition: all 0.3s ease;
+}
+
+.notify-button-enhanced:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}

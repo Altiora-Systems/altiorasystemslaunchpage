@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/micro-interactions-base.css">
+  <link rel="stylesheet" href="css/advanced-interactions-base.css">
+  <link rel="stylesheet" href="css/micro-interactions-contact.css">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="assets/icons/favicons/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icons/favicons/favicon-32x32.png" type="image/png">
@@ -81,9 +84,9 @@
 
   <main class="contact-main">
     <div class="contact-container">
-      <h1 class="contact-title">We would love to hear from you</h1>
+      <h1 class="contact-title text-reveal">We would love to hear from you</h1>
       
-      <div class="contact-layout">
+      <div class="contact-layout scroll-reveal">
         <!-- Left side: Form -->
         <div class="contact-form-section">
           <form class="contact-form" id="contact-form" method="POST" action="YOUR_GOOGLE_SHEETS_SCRIPT_URL">
@@ -110,8 +113,11 @@
             </div>
             
             <div class="checkbox-group">
-              <input type="checkbox" id="agreeComms" name="agreeComms" class="form-checkbox" required>
-              <label for="agreeComms" class="checkbox-label">I agree to receive communications from Altiora Systems</label>
+              <label for="agreeComms" class="checkbox-custom">
+                <input type="checkbox" id="agreeComms" name="agreeComms" required>
+                <span class="checkmark"></span>
+                I agree to receive communications from Altiora Systems
+              </label>
             </div>
             
             <div class="form-buttons">
@@ -162,5 +168,7 @@
   <script>document.getElementById('current-year-contact').textContent = new Date().getFullYear();</script>
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/micro-interactions-base.js"></script>
+  <script src="js/micro-interactions-contact.js"></script>
 </body>
 </html>

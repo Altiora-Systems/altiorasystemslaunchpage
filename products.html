@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/products.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/micro-interactions-base.css">
+  <link rel="stylesheet" href="css/advanced-interactions-base.css">
+  <link rel="stylesheet" href="css/micro-interactions-products.css">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="assets/icons/favicons/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icons/favicons/favicon-32x32.png" type="image/png">
@@ -81,12 +84,12 @@
 
   <main class="products-figma-main">
     <div class="products-figma-container">
-      <h1 class="products-figma-title">Coming Soon</h1>
-      <div class="products-figma-description">
+      <h1 class="products-figma-title text-reveal">Coming Soon</h1>
+      <div class="products-figma-description scroll-reveal">
         Our products <span class="barrel-text">Barrel</span> <span class="link-text">Link</span> and <span class="altiora-text">Altiora</span><span class="connect-text">Connect</span> are currently in development. We anticipate launching alpha testing in August 2025, with a public release by late Q4 2025.
       </div>
       
-      <div class="products-figma-form-container">
+      <div class="products-figma-form-container scroll-reveal">
         <form class="products-figma-form" id="notify-form" method="POST" action="YOUR_GOOGLE_SHEETS_SCRIPT_URL">
           <input type="hidden" name="_next" value="/thank-you.html">
           <input type="hidden" name="_subject" value="Product Launch Notification Request">
@@ -141,5 +144,7 @@
   <script>document.getElementById('current-year-products').textContent = new Date().getFullYear();</script>
   <script src="js/main.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/micro-interactions-base.js"></script>
+  <script src="js/micro-interactions-products.js"></script>
 </body>
 </html>

@@ -1,0 +1,132 @@
+/* ================================
+   CONTACT PAGE MICRO-INTERACTIONS
+   ================================ */
+
+/* Form title reveal */
+.contact-title-reveal {
+    transition: all 0.8s ease;
+}
+
+.contact-title-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form layout reveal */
+.contact-layout-reveal {
+    transition: all 0.6s ease;
+}
+
+.contact-layout-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced form inputs */
+.contact-input-enhanced {
+    transition: all 0.3s ease;
+}
+
+.contact-input-enhanced:focus {
+    transform: scale(1.01);
+    box-shadow: 0 0 0 3px rgba(var(--primary-brand-accent-rgb), 0.1);
+}
+
+/* Custom checkbox styling */
+.checkbox-custom {
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.checkbox-custom input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+.checkbox-custom .checkmark {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-custom:hover .checkmark {
+    border-color: var(--primary-brand-accent);
+    background-color: #f9fafb;
+}
+
+.checkbox-custom input[type="checkbox"]:checked ~ .checkmark {
+    background-color: var(--primary-brand-accent);
+    border-color: var(--primary-brand-accent);
+}
+
+.checkbox-custom .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-custom input[type="checkbox"]:checked ~ .checkmark::after {
+    display: block;
+}
+
+/* Checkbox focus states */
+.checkbox-custom input[type="checkbox"]:focus ~ .checkmark {
+    box-shadow: 0 0 0 3px rgba(var(--primary-brand-accent-rgb), 0.1);
+}
+
+/* Send button enhanced styling */
+.btn-send {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-send:active {
+    transform: translateY(0);
+}
+
+/* Clear button styling */
+.btn-clear {
+    transition: all 0.3s ease;
+}
+
+.btn-clear:hover {
+    transform: translateY(-2px);
+    background-color: #f3f4f6;
+}
+
+/* Form buttons hover effect */
+.form-button-enhanced {
+    transition: all 0.3s ease;
+}
+
+.form-button-enhanced:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}

@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/micro-interactions-base.css">
+  <link rel="stylesheet" href="css/advanced-interactions-base.css">
+  <link rel="stylesheet" href="css/micro-interactions-home.css">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="assets/icons/favicons/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icons/favicons/favicon-32x32.png" type="image/png">
@@ -82,14 +85,14 @@
   </header>
   <main class="main-content">
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero hero-parallax">
       <div class="hero-container">
-        <div class="hero-content">
+        <div class="hero-content text-reveal">
           <h1 class="hero-title">Modernizing Caribbean Logistics</h1>
           <p class="hero-subtitle">The only digital platform connecting Caribbean families and carrier for barrel shipping, from their front door to yours.</p>
           <a href="contact.html" class="hero-cta">JOIN OUR NETWORK</a>
         </div>
-        <div class="hero-image">
+        <div class="hero-image image-reveal">
           <img src="assets/images/mockups/altioraconnect.png" alt="Altiora Connect Dashboard" class="hero-mockup" loading="lazy">
         </div>
       </div>
@@ -98,12 +101,12 @@
     <section class="products-section">
       <div class="products-container">
         <div class="products-header">
-          <h2 class="products-title">Our Flagship Products</h2>
-          <p class="products-subtitle">Empowering logistics providers and Caribbean communities with cutting-edge technology solutions.</p>
+          <h2 class="products-title text-reveal">Our Flagship Products</h2>
+          <p class="products-subtitle scroll-reveal">Empowering logistics providers and Caribbean communities with cutting-edge technology solutions.</p>
         </div>
-        <div class="products-grid-new">
+        <div class="products-grid-new scroll-reveal-grid">
           <!-- BarrelLink Card -->
-          <div class="product-card-new">
+          <div class="product-card-new stagger-fade-in">
             <div class="product-logo-new">
               <img src="assets/images/logos/barrellink.svg" alt="BarrelLink Logo" class="product-logo-img-new barrellink-logo" loading="lazy">
             </div>
@@ -124,7 +127,7 @@
             </ul>
           </div>
           <!-- Altiora Connect Card -->
-          <div class="product-card-new">
+          <div class="product-card-new stagger-fade-in">
             <div class="product-logo-new">
               <img src="assets/images/logos/altiora connect_w:black.svg" alt="Altiora Connect Logo" class="product-logo-img-new altioraconnect-logo" loading="lazy">
             </div>
@@ -150,18 +153,18 @@
     <!-- Statistics Section -->
     <section class="statistics">
       <div class="statistics-container">
-        <h2 class="statistics-title">The Barrel Shipping Market is Ready for Disruption</h2>
-        <div class="stats-grid">
-          <div class="stat-card stat-card-blue">
-            <h3 class="stat-value">$284 Million</h3>
+        <h2 class="statistics-title text-reveal">The Barrel Shipping Market is Ready for Disruption</h2>
+        <div class="stats-grid scroll-reveal-grid">
+          <div class="stat-card stat-card-blue stagger-fade-in">
+            <h3 class="stat-value counter">$284 Million</h3>
             <p class="stat-description">Annual remittances to Latin America and the Caribbean</p>
           </div>
-          <div class="stat-card stat-card-yellow">
-            <h3 class="stat-value">3.5 Million</h3>
+          <div class="stat-card stat-card-yellow stagger-fade-in">
+            <h3 class="stat-value counter">3.5 Million</h3>
             <p class="stat-description">Caribbean-born immigrants in the United States</p>
           </div>
-          <div class="stat-card stat-card-blue">
-            <h3 class="stat-value">1.2 Million</h3>
+          <div class="stat-card stat-card-blue stagger-fade-in">
+            <h3 class="stat-value counter">1.2 Million</h3>
             <p class="stat-description">Over 1.2 million barrels shipped from the U.S. to the Caribbean!!</p>
           </div>
         </div>
@@ -175,7 +178,7 @@
             <h2 class="cta-title">Ready to transform Caribbean logistics?</h2>
             <div class="cta-divider"></div>
             <div class="cta-buttons">
-              <a href="contact.html" class="cta-btn cta-btn-primary">Partner With Us</a>
+              <a href="contact.html" class="cta-btn cta-btn-primary btn-hover-up">Partner With Us</a>
             </div>
           </div>
         </div>
@@ -198,5 +201,7 @@
   <script>document.getElementById('current-year-index').textContent = new Date().getFullYear();</script>
   <script src="js/main.js"></script>
   <script src="js/home.js"></script>
+  <script src="js/micro-interactions-base.js"></script>
+  <script src="js/micro-interactions-home.js"></script>
 </body>
 </html>

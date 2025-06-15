@@ -1,0 +1,56 @@
+/* ================================
+   HOME PAGE MICRO-INTERACTIONS
+   ================================ */
+
+/* Hero section enhancements */
+.hero-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Product cards simple hover effect */
+.product-card-hover {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-card-hover:active {
+    transform: translateY(-4px);
+}
+
+/* Statistics cards hover effect */
+.stat-card-hover {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.stat-card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Counter animation for statistics */
+.counter {
+    font-variant-numeric: tabular-nums;
+}
+
+/* CTA section enhancements */
+.cta-card-reveal {
+    transition: all 0.6s ease;
+}
+
+.cta-card-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}

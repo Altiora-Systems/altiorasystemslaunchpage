@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/micro-interactions-base.css">
+  <link rel="stylesheet" href="css/advanced-interactions-base.css">
+  <link rel="stylesheet" href="css/micro-interactions-about.css">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="assets/icons/favicons/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icons/favicons/favicon-32x32.png" type="image/png">
@@ -82,19 +85,19 @@
     <!-- Hero Section -->
     <section class="about-hero">
       <div class="about-hero-container">
-        <h1 class="about-hero-title">Meet the Altiora Team</h1>
-        <p class="about-hero-subtitle">Visionary leaders driving innovation in Caribbean logistics technology with strategic leadership, operations expertise and cultural understanding</p>
+        <h1 class="about-hero-title text-reveal">Meet the Altiora Team</h1>
+        <p class="about-hero-subtitle scroll-reveal">Visionary leaders driving innovation in Caribbean logistics technology with strategic leadership, operations expertise and cultural understanding</p>
       </div>
     </section>
     
     <!-- Executive Leadership Section -->
     <section class="about-executive">
       <div class="about-executive-container">
-        <h2 class="about-executive-title">Executive Leadership</h2>
-        <p class="about-executive-subtitle">Experienced professionals committed to transforming Caribbean logistics</p>
+        <h2 class="about-executive-title text-reveal">Executive Leadership</h2>
+        <p class="about-executive-subtitle scroll-reveal">Experienced professionals committed to transforming Caribbean logistics</p>
         
-        <div class="about-team-grid">
-          <div class="about-team-card">
+        <div class="about-team-grid scroll-reveal-grid">
+          <div class="about-team-card stagger-fade-in">
             <img src="assets/images/optimized/team/Eadie_Alex.jpeg" alt="Alexander Eadie" class="about-team-photo" loading="lazy">
             <h3 class="about-team-name">Alexander Eadie</h3>
             <p class="about-team-role">Chief Executive Officer</p>
@@ -102,7 +105,7 @@
             <a href="https://www.linkedin.com/in/alexander-eadie/" class="about-team-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn"></a>
           </div>
           
-          <div class="about-team-card">
+          <div class="about-team-card stagger-fade-in">
             <img src="assets/images/optimized/team/Glazer_Steve.jpeg" alt="Steven Glazer" class="about-team-photo" loading="lazy">
             <h3 class="about-team-name">Steven Glazer</h3>
             <p class="about-team-role">Chief Technology Officer</p>
@@ -110,7 +113,7 @@
             <a href="https://www.linkedin.com/in/steven-glazer/" class="about-team-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn"></a>
           </div>
           
-          <div class="about-team-card">
+          <div class="about-team-card stagger-fade-in">
             <img src="assets/images/optimized/team/Lee_Peter.jpeg" alt="Peter Lee" class="about-team-photo" loading="lazy">
             <h3 class="about-team-name">Peter Lee</h3>
             <p class="about-team-role">Chief Operating Officer</p>
@@ -118,7 +121,7 @@
             <a href="https://www.linkedin.com/in/peterlee88/" class="about-team-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn"></a>
           </div>
           
-          <div class="about-team-card">
+          <div class="about-team-card stagger-fade-in">
             <img src="assets/images/optimized/team/Sinha_Deepayan.jpg" alt="Deepayan Sinha" class="about-team-photo" loading="lazy">
             <h3 class="about-team-name">Deepayan Sinha</h3>
             <p class="about-team-role">Engineering Director</p>
@@ -132,8 +135,8 @@
     <!-- Our Mission Section -->
     <section class="about-mission">
       <div class="about-mission-container">
-        <div class="about-mission-content">
-          <h2 class="about-mission-title">Our Mission</h2>
+        <div class="about-mission-content scroll-reveal">
+          <h2 class="about-mission-title text-reveal">Our Mission</h2>
           <p class="about-mission-text">To connect people, places, and possibilities through technology – shaping the future of Caribbean logistics with purpose and precision.</p>
           
           <div class="about-mission-points">
@@ -206,8 +209,8 @@
     <!-- Join Our Mission CTA Section -->
     <section class="about-cta">
       <div class="about-cta-container">
-        <h2 class="about-cta-title">Join Our Mission</h2>
-        <p class="about-cta-subtitle">Ready to be part of transforming Caribbean logistics? We're always looking for passionate partners and investors.</p>
+        <h2 class="about-cta-title text-reveal">Join Our Mission</h2>
+        <p class="about-cta-subtitle scroll-reveal">Ready to be part of transforming Caribbean logistics? We're always looking for passionate partners and investors.</p>
         
         <div class="about-cta-buttons">
           <a href="contact.html" class="about-cta-btn about-cta-btn-primary">Partner With Us</a>
@@ -231,5 +234,7 @@
   <script>document.getElementById('current-year-about').textContent = new Date().getFullYear();</script>
   <script src="js/main.js"></script>
   <script src="js/about.js"></script>
+  <script src="js/micro-interactions-base.js"></script>
+  <script src="js/micro-interactions-about.js"></script>
 </body>
 </html>
