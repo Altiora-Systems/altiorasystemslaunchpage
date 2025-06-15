@@ -5,18 +5,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenuDropdown = document.querySelector('.mobile-menu-dropdown');
     
+    console.log('Mobile menu elements found:', {
+        button: !!mobileMenuBtn,
+        dropdown: !!mobileMenuDropdown
+    });
+    
     if (mobileMenuBtn && mobileMenuDropdown) {
-        mobileMenuBtn.addEventListener('click', function() {
+        console.log('Mobile menu: Adding event listeners');
+        
+        mobileMenuBtn.addEventListener('click', function(e) {
+            console.log('Mobile menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
             const isActive = mobileMenuDropdown.classList.contains('active');
+            console.log('Menu currently active:', isActive);
             
             if (isActive) {
                 // Close menu
                 mobileMenuDropdown.classList.remove('active');
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                console.log('Menu closed');
             } else {
                 // Open menu
                 mobileMenuDropdown.classList.add('active');
                 mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                console.log('Menu opened');
             }
         });
         
@@ -46,10 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 100);
             });
         });
+    } else {
+        console.error('Mobile menu elements not found:', {
+            button: !!mobileMenuBtn,
+            dropdown: !!mobileMenuDropdown
+        });
     }
-
-    // Instantiate BaseMicroInteractions
-    new BaseMicroInteractions();
+    
+    console.log('Main.js: Mobile menu initialization complete');
 });
 
 // Shared Utility Functions
