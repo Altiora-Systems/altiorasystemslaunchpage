@@ -1185,177 +1185,263 @@ body {
    PRODUCTS PAGE - FIGMA EXACT MATCH
    ================================ */
 
-.products-main {
+/* ================================
+   PRODUCTS PAGE - FIGMA EXACT MATCH
+   ================================ */
+
+.products-figma-main {
     background-color: #FFFFFF;
     min-height: 100vh;
     padding-top: 80px;
-    padding-bottom: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    width: 100%;
 }
 
-.products-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.products-figma-container {
+    position: absolute;
+    top: 248px;
+    left: calc(16.6667% + 24px);
+    width: calc(100% - 2 * (16.6667% + 24px));
+    max-width: 1000px;
 }
 
-.products-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    z-index: 10;
-}
-
-.products-title {
+.products-figma-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 128px;
-    line-height: 120px;
+    line-height: 0.9;
     color: #31456A;
-    margin: 0 0 60px 0;
-    letter-spacing: -0.02em;
     text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 910px;
     white-space: nowrap;
 }
 
-.products-description {
-    margin: 0 0 60px 0;
-    text-align: center;
-}
-
-.products-description p {
+.products-figma-description {
+    position: absolute;
+    top: 424px;
+    left: calc(50% + 5.5px);
+    transform: translateX(-50%);
+    width: 923px;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 24px;
-    line-height: 32px;
+    line-height: 1.4;
     color: #31456A;
+    text-align: center;
     margin: 0;
-    max-width: 700px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2; /* Standard property */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    min-height: 64px;
 }
 
-.barrel-text {
+.products-figma-description .barrel-text {
     color: #003C7B;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
+    font-size: 32px;
+    font-weight: 600;
 }
 
-.link-text {
+.products-figma-description .link-text {
     color: #FA8800;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 32px;
 }
 
-.altiora-text {
+.products-figma-description .altiora-text {
     color: #31456A;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 32px;
 }
 
-.connect-text {
+.products-figma-description .connect-text {
     color: #00B0F0;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 32px;
 }
 
-.email-input-container {
+.products-figma-form-container {
+    position: absolute;
+    top: 586px;
+    left: calc(16.6667% + 88px);
+    width: 794.552px;
+}
+
+.products-figma-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 74px;
     width: 100%;
-    max-width: 650px;
-    height: 80px;
+}
+
+.products-email-container {
+    width: 794.552px;
+    height: 71.396px;
     position: relative;
-    margin: 0 0 30px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.email-input {
+.products-email-input {
     width: 100%;
-    height: 80px;
-    background-color: #E8F4FD;
+    height: 100%;
+    background: #E3EDF7;
     border: none;
-    border-radius: 40px;
-    padding: 0 30px;
-    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 16px;
+    padding: 0 32.597px;
+    font-family: 'SF Pro Display', sans-serif;
     font-weight: 400;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 21.48px;
     color: #31456A;
     outline: none;
     box-sizing: border-box;
+    box-shadow: -4px -2px 16px 0px #ffffff inset, 4px 2px 16px 0px rgba(136, 165, 191, 0.48) inset;
 }
 
-.email-input::placeholder {
+.products-email-input::placeholder {
     color: #31456A;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'SF Pro Display', sans-serif;
     font-weight: 400;
     font-size: 18px;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
-.email-input:focus {
-    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48) inset, 0 0 0 2px #85CCFF;
+.products-email-input:focus {
+    box-shadow: -4px -2px 16px 0px #ffffff inset, 4px 2px 16px 0px rgba(136, 165, 191, 0.48) inset, 0 0 0 2px #85ccff;
 }
 
-.notify-btn {
+.products-notify-button {
+    position: absolute;
+    top: 732px;
+    left: calc(50% + 5.4477px);
+    transform: translateX(-50%);
+    width: 230.896px;
+    height: 59.086px;
+    background: #FFD36E;
+    border: none;
+    border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    width: auto;
-    min-width: 190px;
-    height: 60px;
-    padding: 18px 45px;
-    background: #FFD36E;
-    border-radius: 40px;
-    border: none;
+    gap: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 30px;
-    letter-spacing: 0.01px;
+    letter-spacing: 0.008px;
     color: #000000;
-    text-align: center;
-    white-space: nowrap;
+    text-transform: uppercase;
 }
 
-.notify-btn:hover {
+.products-notify-button:hover {
     background: #ffca45;
-    transform: translateY(-2px);
+    transform: translateX(-50%) translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 211, 110, 0.4);
 }
 
-.notify-btn:active {
-    transform: translateY(0);
+.products-notify-button:active {
+    transform: translateX(-50%) translateY(0);
 }
 
-.notify-icon {
-    width: 26px;
-    height: 26px;
+.products-notify-icon {
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
+}
+
+/* ================================
+   PRODUCTS PAGE - FIGMA EXACT STYLES
+   ================================ */
+.products-figma-main {
+  background-color: #ffffff;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.products-figma-container {
+  position: absolute;
+  top: 248px;
+  left: calc(16.6667% + 24px);
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.products-figma-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 128px;
+  line-height: 115.2px; /* 0.9 line height from Figma */
+  color: #31456a;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+  width: 910px;
+  position: relative;
+  top: 0;
+  left: calc(50% - 455px); /* Center 910px width */
+}
+
+.products-figma-description {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33.6px; /* 1.4 line height */
+  color: #31456a;
+  text-align: center;
+  margin: 0;
+  width: 923px;
+  position: relative;
+  top: 176px; /* 424px from container top - 248px = 176px relative */
+  left: calc(50% - 461.5px); /* Center 923px width */
+}
+
+.products-figma-description .barrel-text {
+  color: #003c7b;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.products-figma-description .link-text {
+  color: #fa8800;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.products-figma-description .altiora-text {
+  color: #31456a;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.products-figma-description .connect-text {
+  color: #00b0f0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.products-figma-form-container {
+  position: absolute;
+  top: 338px; /* 586px from container top - 248px = 338px relative */
+  left: calc(16.6667% + 88px);
+  width: 794.552px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 74px;
 }
 
 /* ================================
@@ -1363,829 +1449,227 @@ body {
    ================================ */
 
 @media (max-width: 1440px) {
-    .products-container {
-        max-width: 1000px;
-        padding: 0 32px;
-    }
-    
-    .products-title {
-        font-size: 100px;
-        line-height: 90px;
-        white-space: nowrap;
-    }
-    
-    .email-input-container {
-        max-width: 550px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .products-container {
-        padding: 40px 32px;
-    }
-    
-    .products-title {
-        font-size: 80px;
-        line-height: 70px;
-        white-space: nowrap;
-    }
-    
-    .email-input-container {
-        max-width: 500px;
-    }
+  .products-figma-main {
+    padding-top: 100px;
+  }
+  
+  .products-figma-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding: 60px 100px 0 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .products-figma-title {
+    font-size: 100px;
+    line-height: 90px;
+    width: auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 80px;
+  }
+  
+  .products-figma-description {
+    font-size: 22px;
+    line-height: 30px;
+    width: auto;
+    max-width: 800px;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 80px;
+  }
+  
+  .products-figma-description .barrel-text,
+  .products-figma-description .link-text,
+  .products-figma-description .altiora-text,
+  .products-figma-description .connect-text {
+    font-size: 28px;
+  }
+  
+  .products-figma-form-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .products-email-container {
+    width: 100%;
+    max-width: 700px;
+    height: 65px;
+  }
+  
+  .products-notify-button {
+    width: 210px;
+    height: 55px;
+  }
 }
 
 @media (max-width: 1024px) {
-    .products-container {
-        padding: 20px 16px;
-    }
-    
-    .products-title {
-        font-size: 60px;
-        line-height: 50px;
-        margin-bottom: 40px;
-        white-space: nowrap;
-    }
-    
-    .products-description {
-        margin-bottom: 40px;
-    }
-    
-    .products-description p {
-        font-size: 18px;
-        line-height: 26px;
-    }
-    
-    .barrel-text,
-    .link-text,
-    .altiora-text,
-    .connect-text {
-        font-size: 18px;
-        line-height: 26px;
-    }
-    
-    .email-input-container {
-        height: 60px;
-        max-width: 400px;
-    }
-    
-    .email-input {
-        font-size: 16px;
-        padding: 0 20px;
-    }
-    
-    .notify-btn {
-        width: auto;
-        min-width: 160px;
-        height: 50px;
-        font-size: 15px;
-    }
-    
-    .notify-icon {
-        width: 22px;
-        height: 22px;
-    }
-}
-
-@media (max-width: 768px) {
-    .products-container {
-        padding: 20px 16px;
-    }
-    
-    .products-title {
-        font-size: 48px;
-        line-height: 44px;
-        margin-bottom: 30px;
-        white-space: nowrap;
-    }
-    
-    .products-description {
-        margin-bottom: 30px;
-    }
-    
-    .products-description p {
-        font-size: 16px;
-        line-height: 22px;
-    }
-    
-    .barrel-text,
-    .link-text,
-    .altiora-text,
-    .connect-text {
-        font-size: 16px;
-        line-height: 22px;
-    }
-    
-    .email-input-container {
-        height: 50px;
-        max-width: 300px;
-    }
-    
-    .email-input {
-        font-size: 14px;
-        padding: 0 15px;
-    }
-    
-    .notify-btn {
-        width: auto;
-        min-width: 150px;
-        height: 45px;
-        font-size: 14px;
-    }
-    
-    .notify-icon {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-/* ================================
-   CONTACT PAGE - FIGMA EXACT MATCH
-   ================================ */
-
-.contact-main {
-  background: linear-gradient(135deg, #85ccff 0%, #a3d5f4 100%);
-  min-height: 100vh;
-  padding-top: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-content {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 85px 232px;
-}
-
-.contact-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 50px;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 48px;
-  margin: 0 auto 48px auto;
-}
-
-.contact-layout {
-  display: flex;
-  gap: 324px;
-  align-items: flex-start;
-}
-
-.contact-form-container {
-  width: 488px;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-label {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #0a1f2f;
-  margin-bottom: 0;
-}
-
-.form-input,
-.form-textarea {
-  width: 100%;
-  background: #ffffff;
-  border: 1px solid #d1d5db;
-  border-radius: 12px;
-  padding: 16px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  color: #111827;
-  box-sizing: border-box;
-}
-
-.form-input {
-  height: 50px;
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: #adaebc;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.form-textarea {
-  height: 170px;
-  resize: none;
-  font-family: 'Inter', sans-serif;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.form-checkbox {
-  width: 11.188px;
-  height: 11.188px;
-  border: 0.5px solid #000000;
-  border-radius: 1px;
-  background: #ffffff;
-  accent-color: #000000;
-}
-
-.checkbox-label {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.form-buttons {
-  display: flex;
-  gap: 16px;
-  margin-top: 24px;
-}
-
-.btn-send {
-  background: #f2cb2e;
-  border: none;
-  border-radius: 8px;
-  padding: 5px 16px;
-  height: 40px;
-  width: 118px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 30px;
-  color: #000000;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.0075px;
-}
-
-.btn-send:hover {
-  background: #e6b82a;
-}
-
-.btn-clear {
-  background: transparent;
-  border: 2px solid #4a5568;
-  border-radius: 8px;
-  padding: 5px 16px;
-  height: 40px;
-  width: 101px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 30px;
-  color: #4a5568;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.0075px;
-}
-
-.btn-clear:hover {
-  background: rgba(74, 85, 104, 0.1);
-}
-
-.contact-info {
-  width: 488px;
-  padding-top: 359px;
-}
-
-.contact-info-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.contact-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-}
-
-.contact-text {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #ffffff;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .contact-content {
-    padding: 40px 40px;
-  }
-  
-  .contact-layout {
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-  }
-  
-  .contact-form-container,
-  .contact-info {
-    width: 100%;
-    max-width: 500px;
-  }
-  
-  .contact-info {
-    padding-top: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-main {
+  .products-figma-main {
     padding-top: 80px;
   }
   
-  .contact-content {
-    padding: 20px 20px;
+  .products-figma-container {
+    padding: 40px 60px 0 60px;
   }
   
-  .contact-title {
-    font-size: 32px;
-    line-height: 40px;
+  .products-figma-title {
+    font-size: 80px;
+    line-height: 72px;
+    margin-bottom: 60px;
   }
   
-  .form-input,
-  .form-textarea {
-    font-size: 14px;
+  .products-figma-description {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 60px;
   }
   
-  .form-buttons {
-    flex-direction: column;
-    align-items: center;
+  .products-figma-description .barrel-text,
+  .products-figma-description .link-text,
+  .products-figma-description .altiora-text,
+  .products-figma-description .connect-text {
+    font-size: 24px;
   }
   
-  .btn-send,
-  .btn-clear {
+  .products-email-container {
     width: 100%;
-    max-width: 200px;
+    max-width: 600px;
+    height: 60px;
   }
-}
-
-.contact-section {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 100vh;
-}
-
-.contact-container {
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-}
-
-.contact-card {
-    width: 888px;
-    height: 568px;
-    background: #111111;
-    border-radius: 0;
-    display: flex;
-    overflow: hidden;
-    box-shadow: 0px 0px 50px 25px rgba(2, 39, 35, 1);
-    position: relative;
-}
-
-.contact-form-section {
-    width: 445px;
-    height: 568px;
-    background: #111111;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border-radius: 0;
-}
-
-.contact-mobile-menu {
-    position: absolute;
-    top: 20px;
-    left: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.hamburger-line {
-    width: 21px;
-    height: 2px;
-    background: #ffffff;
-    border-radius: 12.3333px;
-}
-
-.hamburger-line:nth-child(2) {
-    width: 18px;
-}
-
-.hamburger-line:nth-child(3) {
-    width: 21px;
-}
-
-.contact-form-content {
-    padding: 88px 40px 40px 88px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    box-sizing: border-box;
-}
-
-.contact-form-content {
-    height: calc(100% - 60px) !important;
-    justify-content: space-between !important;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex: 1;
-}
-
-.contact-form-header {
-    margin-bottom: 24px;
-}
-
-.contact-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 35px;
-    color: #ffffff;
-    margin: 0 0 16px 0;
-}
-
-.contact-subtitle {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.2;
-    color: #ffffff;
-    margin: 0;
-    max-width: 293px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 24px;
-}
-
-.form-row {
-    display: flex;
-    gap: 28px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.form-input {
-    width: 192px;
-    height: 32px;
-    background: transparent;
-    border: 0.6px solid #ffffff;
-    border-radius: 0;
-    padding: 0 8px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 12px;
-    color: #ffffff;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.form-input:focus {
-    border-color: #85CCFF;
-    box-shadow: 0 0 0 1px rgba(133, 204, 255, 0.3);
-}
-
-.form-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.form-textarea {
-    width: 412px;
-    height: 90px;
-    background: transparent;
-    border: 0.6px solid #ffffff;
-    border-radius: 0;
-    padding: 8px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 12px;
-    color: #ffffff;
-    outline: none;
-    resize: none;
-    box-sizing: border-box;
-}
-
-.form-textarea:focus {
-    border-color: #85CCFF;
-    box-shadow: 0 0 0 1px rgba(133, 204, 255, 0.3);
-}
-
-.form-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Checkbox styling */
-.checkbox-group {
-    margin-bottom: 16px;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    cursor: pointer;
-}
-
-.form-checkbox {
-    width: 16px;
-    height: 16px;
-    margin: 0;
-    flex-shrink: 0;
-    cursor: pointer;
-}
-
-.checkbox-text {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    color: #ffffff;
-    line-height: 1.2;
-}
-
-/* Form buttons */
-.form-buttons {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
-}
-
-.contact-submit-btn {
-    width: 161px;
-    height: 35px;
-    background: #FFD36E;
-    border: none;
-    border-radius: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 1;
-    color: #111111;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-submit-btn:hover {
-    background: #ffca45;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(242, 203, 46, 0.3);
-}
-
-.contact-clear-btn {
-    width: 132px;
-    height: 35px;
-    background: transparent;
-    border: 1px solid #ffffff;
-    border-radius: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 1;
-    color: #ffffff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-clear-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-1px);
-}
-
-.contact-direct-email {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.2;
-    color: #ffffff;
-    margin: 0;
-}
-
-.contact-logo-section {
-    width: 443px;
-    height: 568px;
-    background: #f7f7f7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0 61.6667px 61.6667px 0;
-}
-
-.contact-nav-arrow {
-    position: absolute;
-    top: 244.2px;
-    left: -6.95px;
-    width: 4.317px;
-    height: 13.875px;
-    cursor: pointer;
-    z-index: 10;
-    transform: rotate(180deg);
-}
-
-.contact-nav-arrow svg {
-    width: 100%;
-    height: 100%;
-}
-
-.contact-nav-arrow::before {
-    content: '';
-    position: absolute;
-    top: -30.92px;
-    left: -13.45px;
-    width: 22.656px;
-    height: 71.016px;
-    background: #FFD36E;
-    transform: rotate(270deg);
-    clip-path: polygon(21.047% 5.068%, 78.953% 5.068%, 100% 100%, 0% 100%);
-}
-
-.contact-logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 40px;
-    box-sizing: border-box;
-}
-
-.contact-logo {
-    width: auto;
-    height: 700px;
-    max-width: 900px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-/* ================================
-   CONTACT PAGE RESPONSIVE DESIGN
-   ================================ */
-
-@media (max-width: 1200px) {
-    .contact-container {
-        height: auto;
-        min-height: 100vh;
-        padding: 40px 20px;
-    }
-    
-    .contact-card {
-        width: 100%;
-        max-width: 800px;
-        height: auto;
-        min-height: 500px;
-        border-radius: 20px;
-        box-shadow: 0px 0px 30px 15px rgba(2, 39, 35, 0.6);
-    }
-    
-    .contact-form-section {
-        width: 55%;
-        height: auto;
-        padding: 40px 30px;
-    }
-    
-    .contact-form-content {
-        padding: 20px 0;
-    }
-    
-    .contact-logo-section {
-        width: 45%;
-        height: auto;
-        border-radius: 0 20px 20px 0;
-    }
-    
-    .contact-nav-arrow {
-        display: none;
-    }
+  
+  .products-email-input {
+    padding: 0 24px;
+    font-size: 16px;
+  }
+  
+  .products-notify-button {
+    width: 190px;
+    height: 50px;
+    font-size: 15px;
+  }
+  
+  .products-notify-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-    .contact-main {
-        min-height: calc(100vh - 80px);
-        padding-top: 80px;
-    }
-    
-    .contact-card {
-        flex-direction: column;
-        border-radius: 20px;
-        max-width: 600px;
-    }
-    
-    .contact-form-section {
-        width: 100%;
-        border-radius: 20px 20px 0 0;
-        padding: 40px 30px;
-        height: auto;
-    }
-    
-    .contact-form-content {
-        padding: 0;
-    }
-    
-    .contact-logo-section {
-        width: 100%;
-        height: 200px;
-        border-radius: 0 0 20px 20px;
-    }
-    
-    .contact-logo {
-        height: 400px;
-    }
+  .products-figma-main {
+    padding-top: 80px;
+  }
+  
+  .products-figma-container {
+    padding: 30px 40px 0 40px;
+  }
+  
+  .products-figma-title {
+    font-size: 60px;
+    line-height: 54px;
+    margin-bottom: 40px;
+  }
+  
+  .products-figma-description {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 50px;
+  }
+  
+  .products-figma-description .barrel-text,
+  .products-figma-description .link-text,
+  .products-figma-description .altiora-text,
+  .products-figma-description .connect-text {
+    font-size: 20px;
+  }
+  
+  .products-email-container {
+    width: 100%;
+    max-width: 500px;
+    height: 55px;
+  }
+  
+  .products-email-input {
+    padding: 0 20px;
+    font-size: 15px;
+  }
+  
+  .products-notify-button {
+    width: 170px;
+    height: 45px;
+    font-size: 14px;
+  }
+  
+  .products-notify-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .products-figma-form {
+    gap: 50px;
+  }
 }
 
 @media (max-width: 480px) {
-    .contact-container {
-        padding: 20px 16px;
-    }
-    
-    .contact-card {
-        max-width: 100%;
-    }
-    
-    .contact-form-section {
-        padding: 30px 20px;
-    }
-    
-    .form-input {
-        width: 100%;
-        font-size: 14px;
-    }
-    
-    .form-textarea {
-        width: 100%;
-        font-size: 14px;
-    }
-    
-    .contact-submit-btn {
-        width: 140px;
-        font-size: 11px;
-    }
-    
-    .contact-clear-btn {
-        width: 120px;
-        font-size: 11px;
-    }
-    
-    .contact-logo {
-        height: 150px;
-    }
+  .products-figma-main {
+    padding-top: 80px;
+  }
+  
+  .products-figma-container {
+    padding: 20px 20px 0 20px;
+  }
+  
+  .products-figma-title {
+    font-size: 48px;
+    line-height: 43px;
+    margin-bottom: 30px;
+  }
+  
+  .products-figma-description {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 40px;
+  }
+  
+  .products-figma-description .barrel-text,
+  .products-figma-description .link-text,
+  .products-figma-description .altiora-text,
+  .products-figma-description .connect-text {
+    font-size: 18px;
+  }
+  
+  .products-email-container {
+    width: 100%;
+    max-width: 350px;
+    height: 50px;
+  }
+  
+  .products-email-input {
+    padding: 0 16px;
+    font-size: 14px;
+  }
+  
+  .products-notify-button {
+    width: 150px;
+    height: 40px;
+    font-size: 12px;
+  }
+  
+  .products-notify-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .products-figma-form {
+    gap: 30px;
+  }
 }
 
 /* ================================

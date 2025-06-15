@@ -33,34 +33,48 @@
     </div>
   </header>
 
-  <main class="products-coming-soon-main">
-    <section class="products-coming-soon">
-      <div class="products-coming-soon-container">
-        <h1 class="products-coming-soon-title">Coming Soon</h1>
-        <p class="products-coming-soon-subtitle">
-          Our products <span class="product-name-orange">Barrel Link</span> and <span class="product-name-blue">AltioraConnect</span> are currently in development. We anticipate launching alpha testing in August 2025, with a public release by late Q4 2025.
-        </p>
-        
-        <form class="products-coming-soon-form" id="notify-form">
-          <div class="email-input-container">
+  <main class="products-figma-main">
+    <div class="products-figma-container">
+      <h1 class="products-figma-title">Coming Soon</h1>
+      <div class="products-figma-description">
+        Our products <span class="barrel-text">Barrel</span> <span class="link-text">Link</span> and <span class="altiora-text">Altiora</span><span class="connect-text">Connect</span> are currently in development. We<br>
+        Anticipate launching alpha testing in August 2025, with a public release by late Q4 2025.
+      </div>
+      
+      <div class="products-figma-form-container">
+        <form class="products-figma-form" id="notify-form">
+          <div class="products-email-container">
             <input 
               type="email" 
               id="email" 
               name="email" 
               placeholder="Email" 
-              class="email-input"
+              class="products-email-input"
               required
             >
           </div>
-          <button type="submit" class="notify-button">
-            <svg class="notify-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15.7917 0.208333C15.8333 0.125 15.8333 0.0416667 15.7917 0C15.75 -0.0416667 15.6667 -0.0416667 15.5833 0L0.25 6.75C0.166667 6.79167 0.125 6.83333 0.125 6.91667C0.125 7 0.166667 7.04167 0.25 7.08333L6.375 9.625L8.91667 15.75C8.95833 15.8333 9 15.875 9.08333 15.875C9.16667 15.875 9.20833 15.8333 9.25 15.75L16 0.416667C16.0417 0.333333 16.0417 0.25 16 0.208333C15.9583 0.166667 15.875 0.166667 15.7917 0.208333ZM9.08333 14.5417L7.04167 9.45833L13.5417 2.95833L9.08333 14.5417ZM13.0417 2.45833L6.54167 8.95833L1.45833 6.91667L13.0417 2.45833Z" fill="currentColor"/>
+          <button type="submit" class="products-notify-button">
+            <svg class="products-notify-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="Group 3">
+                <path d="M21 1L10 12" stroke="url(#paint0_linear_22_1158)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 1L14 21L10 12L1 8L21 1Z" stroke="url(#paint1_linear_22_1158)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <linearGradient id="paint0_linear_22_1158" x1="10" y1="6.5" x2="21" y2="6.5" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0066CC"/>
+                  <stop offset="1" stop-color="#1A365D"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_22_1158" x1="1" y1="11" x2="21" y2="11" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0066CC"/>
+                  <stop offset="1" stop-color="#1A365D"/>
+                </linearGradient>
+              </defs>
             </svg>
             NOTIFY ME
           </button>
         </form>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer class="footer">
