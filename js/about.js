@@ -22,5 +22,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add any about page specific interactions here
-    console.log('About page loaded');
+    // About page loaded - ready for production
 });

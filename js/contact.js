@@ -106,7 +106,7 @@ function submitToGoogleSheets(form, data) {
         window.location.href = '/thank-you.html';
     })
     .catch((error) => {
-        console.error('Error submitting to Google Sheets:', error);
+        // Handle Google Sheets submission error gracefully
         // Fallback to mailto
         handleMailtoFallback(data.name, data.email, data.subject, data.message);
     });

@@ -22,5 +22,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add any home page specific animations or interactions here
-    console.log('Home page loaded');
+    // Home page loaded - ready for production
 });
