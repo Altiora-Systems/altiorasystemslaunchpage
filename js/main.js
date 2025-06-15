@@ -1,214 +1,68 @@
-// Products Page - Email Notification Form
+// Shared JavaScript functionality across all pages
+
+// Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const notifyForm = document.getElementById('notify-form');
+    console.log('🔧 Main.js loaded - Debugging mobile menu...');
     
-    if (notifyForm) {
-        notifyForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenuDropdown = document.querySelector('.mobile-menu-dropdown');
+    
+    console.log('🔧 Mobile menu button found:', !!mobileMenuBtn);
+    console.log('🔧 Mobile menu dropdown found:', !!mobileMenuDropdown);
+    
+    if (mobileMenuBtn) {
+        const computedStyle = window.getComputedStyle(mobileMenuBtn);
+        console.log('🔧 Button display:', computedStyle.display);
+        console.log('🔧 Button position:', computedStyle.position);
+        console.log('🔧 Button right:', computedStyle.right);
+        console.log('🔧 Button z-index:', computedStyle.zIndex);
+    }
+    
+    if (mobileMenuBtn && mobileMenuDropdown) {
+        mobileMenuBtn.addEventListener('click', function() {
+            const isActive = mobileMenuDropdown.classList.contains('active');
             
-            const emailInput = document.getElementById('email');
-            const email = emailInput.value.trim();
-            
-            // Basic email validation
-            if (!email) {
-                showError('Please enter your email address.');
-                return;
+            if (isActive) {
+                // Close menu
+                mobileMenuDropdown.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            } else {
+                // Open menu
+                mobileMenuDropdown.classList.add('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
             }
-            
-            if (!isValidEmail(email)) {
-                showError('Please enter a valid email address.');
-                return;
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuBtn.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
+                mobileMenuDropdown.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
             }
-            
-            // Send email to contact@altiorasystems.com
-            const submitButton = notifyForm.querySelector('.notify-button');
-            const originalText = submitButton.innerHTML;
-            
-            // Show loading state
-            submitButton.innerHTML = 'Submitting...';
-            submitButton.disabled = true;
-            
-            // Send email using mailto (will open user's email client)
-            const subject = encodeURIComponent('Product Launch Notification Request');
-            const body = encodeURIComponent(`Hello,
-
-I would like to be notified when Barrel Link and AltioraConnect products are available.
-
-Email: ${email}
-
-Thank you!`);
-            
-            const mailtoLink = `mailto:contact@altiorasystems.com?subject=${subject}&body=${body}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Reset form after a brief delay
-            setTimeout(() => {
-                emailInput.value = '';
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
-                
-                // Show success message
-                showSuccess('Thank you! Your email client should open to send the notification request.');
-            }, 1000);
+        });
+        
+        // Close menu when pressing escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && mobileMenuDropdown.classList.contains('active')) {
+                mobileMenuDropdown.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Close menu when clicking on mobile nav links
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                setTimeout(() => {
+                    mobileMenuDropdown.classList.remove('active');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                }, 100);
+            });
         });
     }
 });
 
-// Contact Page - Contact Form Handling
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const firstName = document.getElementById('firstName').value.trim();
-            const lastName = document.getElementById('lastName').value.trim();
-            const companyName = document.getElementById('companyName').value.trim();
-            const email = document.getElementById('contactEmail').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const agreeComms = document.getElementById('agreeComms').checked;
-            
-            // Basic validation
-            if (!firstName || !lastName || !companyName || !email || !message) {
-                showContactError('Please fill in all required fields.');
-                return;
-            }
-            
-            if (!agreeComms) {
-                showContactError('Please agree to receive communications from Altiora Systems.');
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showContactError('Please enter a valid email address.');
-                return;
-            }
-            
-            // Send email to contact@altiorasystems.com
-            const submitButton = contactForm.querySelector('.contact-submit-btn');
-            const originalText = submitButton.innerHTML;
-            
-            // Show loading state
-            submitButton.innerHTML = 'Sending...';
-            submitButton.disabled = true;
-            
-            // Create email content
-            const subject = encodeURIComponent('Contact Form Submission');
-            const body = encodeURIComponent(`Hello,
-
-I would like to get in touch with you.
-
-Name: ${firstName} ${lastName}
-Company: ${companyName}
-Email: ${email}
-
-Message:
-${message}
-
-Thank you!`);
-            
-            const mailtoLink = `mailto:contact@altiorasystems.com?subject=${subject}&body=${body}`;
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Reset form after a brief delay
-            setTimeout(() => {
-                contactForm.reset();
-                submitButton.innerHTML = originalText;
-                submitButton.disabled = false;
-                
-                // Show success message
-                showContactSuccess('Thank you! Your email client should open to send your message.');
-            }, 1000);
-        });
-    }
-});
-
-// Contact form functionality for simplified Figma design
-function clearForm() {
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.reset();
-  }
-}
-
-// Form validation for new contact form
-function validateContactForm() {
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const subject = document.getElementById('subject').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const agreeComms = document.getElementById('agreeComms').checked;
-  
-  if (!name || !email || !subject || !message || !agreeComms) {
-    alert('Please fill in all required fields and agree to receive communications.');
-    return false;
-  }
-  
-  if (!isValidEmail(email)) {
-    alert('Please enter a valid email address.');
-    return false;
-  }
-  
-  return true;
-}
-
-// Enhanced contact form handling for new design
-document.addEventListener('DOMContentLoaded', function() {
-  const newContactForm = document.getElementById('contact-form');
-  
-  if (newContactForm && !newContactForm.hasAttribute('data-old-form')) {
-    newContactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      if (!validateContactForm()) {
-        return;
-      }
-      
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const subject = document.getElementById('subject').value.trim();
-      const message = document.getElementById('message').value.trim();
-      
-      // Create email content
-      const emailSubject = encodeURIComponent(`Contact Form: ${subject}`);
-      const emailBody = encodeURIComponent(`Hello,
-
-I would like to get in touch with you.
-
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
-
-Message:
-${message}
-
-Thank you!`);
-      
-      const mailtoLink = `mailto:contact@altiorasystems.com?subject=${emailSubject}&body=${emailBody}`;
-      
-      // Open email client
-      window.location.href = mailtoLink;
-      
-      // Show success message and reset form
-      alert('Thank you! Your email client should open to send your message.');
-      clearForm();
-    });
-  }
-});
-
-// Clear form function for contact page
-function clearForm() {
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.reset();
-    }
-}
-
+// Shared Utility Functions
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -227,14 +81,16 @@ function showError(message) {
     errorDiv.textContent = message;
     
     const emailContainer = document.querySelector('.email-input-container');
-    emailContainer.parentNode.insertBefore(errorDiv, emailContainer.nextSibling);
-    
-    // Remove error after 5 seconds
-    setTimeout(() => {
-        if (errorDiv.parentNode) {
-            errorDiv.remove();
-        }
-    }, 5000);
+    if (emailContainer) {
+        emailContainer.parentNode.insertBefore(errorDiv, emailContainer.nextSibling);
+        
+        // Remove error after 5 seconds
+        setTimeout(() => {
+            if (errorDiv.parentNode) {
+                errorDiv.remove();
+            }
+        }, 5000);
+    }
 }
 
 function showSuccess(message) {
@@ -287,14 +143,16 @@ function showContactError(message) {
     `;
     
     const submitButton = document.querySelector('.contact-submit-btn');
-    submitButton.parentNode.insertBefore(errorDiv, submitButton.nextSibling);
-    
-    // Remove error after 5 seconds
-    setTimeout(() => {
-        if (errorDiv.parentNode) {
-            errorDiv.remove();
-        }
-    }, 5000);
+    if (submitButton) {
+        submitButton.parentNode.insertBefore(errorDiv, submitButton.nextSibling);
+        
+        // Remove error after 5 seconds
+        setTimeout(() => {
+            if (errorDiv.parentNode) {
+                errorDiv.remove();
+            }
+        }, 5000);
+    }
 }
 
 function showContactSuccess(message) {

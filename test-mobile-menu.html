@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .header {
+            background: #2F394D;
+            height: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 48px;
+            position: relative;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .navigation {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-icon {
+            width: 24px;
+            height: 24px;
+            background: white;
+        }
+        
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                position: absolute !important;
+                right: 51px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                background: rgba(255, 0, 0, 0.5) !important; /* Red for debugging */
+            }
+            
+            .header-container {
+                justify-content: center !important;
+                padding: 11px 51px !important;
+            }
+            
+            .navigation {
+                display: none !important;
+            }
+            
+            .logo {
+                text-align: center;
+            }
+        }
+        
+        .main-content {
+            margin-top: 80px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">ALTIORA SYSTEMS</div>
+            <nav class="navigation">
+                <a href="#" class="nav-link">ABOUT</a>
+                <a href="#" class="nav-link">PRODUCTS</a>
+                <a href="#" class="nav-link">CONTACT</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Open mobile menu">
+                <div class="mobile-menu-icon"></div>
+            </button>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <h1>Mobile Menu Position Test</h1>
+        <p>Resize your browser window to below 768px width to see the mobile menu.</p>
+        <p>The hamburger menu should appear on the RIGHT side of the header.</p>
+        <p>The logo should be CENTERED.</p>
+        <p>If you see a red box, that's the hamburger menu button.</p>
+    </main>
+    
+    <script>
+        // Test if mobile menu button is clickable
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', function() {
+                alert('Mobile menu button is working and positioned correctly!');
+            });
+            console.log('Mobile menu button found and event listener attached');
+        } else {
+            console.error('Mobile menu button not found!');
+        }
+        
+        // Log current viewport width
+        console.log('Current viewport width:', window.innerWidth);
+        
+        // Check if mobile styles are applied
+        window.addEventListener('resize', function() {
+            console.log('New viewport width:', window.innerWidth);
+            const btn = document.querySelector('.mobile-menu-btn');
+            if (btn) {
+                const computedStyle = window.getComputedStyle(btn);
+                console.log('Mobile button display:', computedStyle.display);
+                console.log('Mobile button position:', computedStyle.position);
+                console.log('Mobile button right:', computedStyle.right);
+            }
+        });
+    </script>
+</body>
+</html>

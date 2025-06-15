@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/shared.css">
   <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="assets/icons/favicons/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icons/favicons/favicon-32x32.png" type="image/png">
@@ -30,6 +31,24 @@
         <a href="https://www.linkedin.com/company/altiora-systems" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
           <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="social-icon">
         </a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu-dropdown">
+        <img src="assets/icons/ui/Header/Mobile menu.svg" alt="Mobile Menu" class="mobile-menu-icon">
+      </button>
+      <div class="mobile-menu-dropdown" id="mobile-menu-dropdown" role="menu">
+        <nav class="mobile-navigation">
+          <a href="about.html" class="mobile-nav-link">ABOUT</a>
+          <a href="products.html" class="mobile-nav-link active">PRODUCTS</a>
+          <a href="contact.html" class="mobile-nav-link">CONTACT</a>
+        </nav>
+        <div class="mobile-social-icons">
+          <a href="https://x.com/AltioraSystems" class="mobile-social-link" aria-label="Twitter/X" target="_blank" rel="noopener">
+            <img src="assets/icons/ui/X_icon.svg" alt="X (Twitter)" class="mobile-social-icon">
+          </a>
+          <a href="https://www.linkedin.com/company/altiora-systems" class="mobile-social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <img src="assets/icons/ui/Linkedin_icon.svg" alt="LinkedIn" class="mobile-social-icon">
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -93,5 +112,6 @@
   
   <script>document.getElementById('current-year-products').textContent = new Date().getFullYear();</script>
   <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
 </body>
 </html>

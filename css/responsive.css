@@ -1,0 +1,372 @@
+/* ================================
+   RESPONSIVE DESIGN SYSTEM
+   ================================ */
+
+/* ================================
+   MOBILE HEADER & NAVIGATION
+   ================================ */
+
+/* Mobile menu button - Higher specificity to override any conflicts */
+@media (max-width: 768px) {
+    .header .header-container .mobile-menu-btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        position: absolute !important;
+        right: 51px !important;
+        top: 50%;
+        transform: translateY(-50%) !important;
+        width: auto;
+        height: auto;
+    }
+    
+    /* Ensure header container is positioned relative */
+    .header .header-container {
+        padding: 11px 51px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative !important;
+        max-width: 100%;
+    }
+    
+    /* Center logo but allow button positioning */
+    .header .header-container .logo-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        flex: 1; /* Take available space */
+        text-align: center;
+    }
+    
+    .header .logo {
+        height: auto;
+        max-width: 223px;
+        width: 100%;
+        max-height: 42px;
+    }
+    
+    .header .mobile-menu-icon {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        filter: brightness(0) invert(1);
+    }
+    
+    /* Hide desktop navigation */
+    .header .navigation,
+    .header .social-icons {
+        display: none !important;
+    }
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    .header .header-container {
+        padding: 11px 32px;
+    }
+    
+    .header .header-container .mobile-menu-btn {
+        right: 32px !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .header .header-container {
+        padding: 11px 20px;
+    }
+    
+    .header .header-container .mobile-menu-btn {
+        right: 20px !important;
+        padding: 6px;
+    }
+    
+    .header .mobile-menu-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .header .header-container {
+        padding: 11px 16px;
+    }
+    
+    .header .header-container .mobile-menu-btn {
+        right: 16px !important;
+    }
+}
+
+/* ================================
+   CRITICAL HAMBURGER MENU FIX
+   ================================ */
+
+/* Force hamburger menu to right side with maximum specificity */
+@media (max-width: 768px) {
+    /* Use high specificity to override any conflicting styles */
+    body .header .header-container .mobile-menu-btn {
+        display: flex !important;
+        position: absolute !important;
+        right: 51px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 9999 !important;
+        background: none !important;
+        border: none !important;
+        padding: 8px !important;
+        cursor: pointer !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+        left: auto !important; /* Ensure left positioning is reset */
+    }
+    
+    /* Ensure header container allows positioning */
+    body .header .header-container {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important; /* Centers the logo */
+        padding: 11px 51px !important;
+    }
+    
+    /* Ensure logo stays centered */
+    body .header .header-container .logo-section {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex: 1 !important;
+        text-align: center !important;
+        z-index: 10 !important;
+    }
+    
+    /* Hide desktop navigation */
+    body .header .navigation,
+    body .header .social-icons {
+        display: none !important;
+    }
+}
+
+/* Additional breakpoints with same high specificity */
+@media (max-width: 480px) {
+    body .header .header-container {
+        padding: 11px 32px !important;
+    }
+    
+    body .header .header-container .mobile-menu-btn {
+        right: 32px !important;
+    }
+}
+
+@media (max-width: 390px) {
+    body .header .header-container {
+        padding: 11px 20px !important;
+    }
+    
+    body .header .header-container .mobile-menu-btn {
+        right: 20px !important;
+        padding: 6px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    body .header .header-container {
+        padding: 11px 16px !important;
+    }
+    
+    body .header .header-container .mobile-menu-btn {
+        right: 16px !important;
+    }
+}
+
+/* ================================
+   MOBILE MENU DROPDOWN
+   ================================ */
+@media (max-width: 768px) {
+    .mobile-menu-dropdown {
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background-color: rgba(47, 57, 77, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+        border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0 0 20px 20px;
+        z-index: 998;
+        padding: 30px 51px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        min-height: calc(100vh - var(--header-height));
+    }
+    
+    .mobile-menu-dropdown.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   CONTENT RESPONSIVE STYLES
+   ================================ */
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .products-grid-new {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .product-card-new {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .hero-container {
+        padding: 0 24px;
+    }
+    
+    .products-container {
+        padding: 0 24px;
+    }
+    
+    .products-grid-new {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .product-card-new {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        padding: 0 24px;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .hero-container,
+    .products-container {
+        padding: 0 16px;
+    }
+    
+    .product-card-new {
+        padding: 20px 24px;
+    }
+}
+
+/* ================================
+   FORM RESPONSIVE STYLES
+   ================================ */
+@media (max-width: 768px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 0 16px;
+    }
+    
+    .form-input,
+    .form-textarea {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+}
+
+/* ================================
+   UTILITY RESPONSIVE CLASSES
+   ================================ */
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none !important;
+    }
+    
+    .mobile-center {
+        text-align: center !important;
+    }
+    
+    .mobile-full-width {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
+/* ================================
+   DEBUG STYLES - REMOVE AFTER TESTING
+   ================================ */
+
+/* Make hamburger menu more visible for debugging */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        background: rgba(255, 0, 0, 0.3) !important; /* Red background for debugging */
+        border: 2px solid #ff0000 !important; /* Red border for debugging */
+        min-width: 40px !important;
+        min-height: 40px !important;
+    }
+    
+    .mobile-menu-icon {
+        background: rgba(0, 255, 0, 0.3) !important; /* Green background for icon debugging */
+    }
+    
+    /* Debug header container */
+    .header-container {
+        border: 2px solid blue !important; /* Blue border for container debugging */
+    }
+    
+    .logo-section {
+        border: 2px solid orange !important; /* Orange border for logo section debugging */
+    }
+}
