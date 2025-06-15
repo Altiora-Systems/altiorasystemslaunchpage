@@ -7,7 +7,7 @@
    ================================ */
 .about-hero {
   background: linear-gradient(90deg, #2f394d 0%, #85ccff 100%);
-  padding: 120px 0 80px 0;
+  padding: 80px 0 100px 0;
   text-align: center;
   color: white;
 }
@@ -21,19 +21,20 @@
 .about-hero-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 56px;
-  line-height: 50px;
-  margin-bottom: 24px;
+  font-size: 64px;
+  line-height: 72px;
+  margin-bottom: 32px;
   color: #ffffff;
+  letter-spacing: -0.02em;
 }
 
 .about-hero-subtitle {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  color: #C8E1FF;
-  max-width: 800px;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -455,6 +456,22 @@
 
 /* Tablet styles */
 @media (max-width: 1024px) {
+  .about-hero {
+    padding: 80px 0 80px 0;
+  }
+  
+  .about-hero-title {
+    font-size: 48px;
+    line-height: 56px;
+    margin-bottom: 24px;
+  }
+  
+  .about-hero-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 600px;
+  }
+  
   .about-mission-container {
     flex-direction: column;
     gap: 60px;
@@ -471,14 +488,24 @@
 }
 
 @media (max-width: 768px) {
+  .about-hero {
+    padding: 80px 0 60px 0;
+  }
+  
+  .about-hero-container {
+    padding: 0 24px;
+  }
+  
   .about-hero-title {
     font-size: 36px;
     line-height: 44px;
+    margin-bottom: 20px;
   }
   
   .about-hero-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
+    max-width: 500px;
   }
   
   .about-team-grid {
@@ -510,15 +537,30 @@
 
 @media (max-width: 480px) {
   .about-hero {
-    padding: 100px 0 60px 0;
+    padding: 80px 0 50px 0;
   }
   
-  .about-hero-container,
+  .about-hero-container {
+    padding: 0 16px;
+  }
+  
+  .about-hero-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 16px;
+  }
+  
+  .about-hero-subtitle {
+    font-size: 14px;
+    line-height: 22px;
+    max-width: 100%;
+  }
+  
   .about-executive-container,
   .about-mission-container,
   .about-values-container,
   .about-cta-container {
-    padding: 0 24px;
+    padding: 0 16px;
   }
   
   .about-executive,
