@@ -2,21 +2,8 @@
 
 // Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🔧 Main.js loaded - Debugging mobile menu...');
-    
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenuDropdown = document.querySelector('.mobile-menu-dropdown');
-    
-    console.log('🔧 Mobile menu button found:', !!mobileMenuBtn);
-    console.log('🔧 Mobile menu dropdown found:', !!mobileMenuDropdown);
-    
-    if (mobileMenuBtn) {
-        const computedStyle = window.getComputedStyle(mobileMenuBtn);
-        console.log('🔧 Button display:', computedStyle.display);
-        console.log('🔧 Button position:', computedStyle.position);
-        console.log('🔧 Button right:', computedStyle.right);
-        console.log('🔧 Button z-index:', computedStyle.zIndex);
-    }
     
     if (mobileMenuBtn && mobileMenuDropdown) {
         mobileMenuBtn.addEventListener('click', function() {

@@ -1,0 +1,39 @@
+{
+  "name": "Altiora Systems",
+  "short_name": "Altiora",
+  "description": "Modernizing Caribbean logistics with digital platform solutions for barrel shipping.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2F394D",
+  "theme_color": "#FFD36E",
+  "orientation": "portrait-primary",
+  "categories": ["logistics", "shipping", "caribbean", "technology"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "assets/icons/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/images/mockups/altioraconnect.png",
+      "sizes": "1200x800",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}

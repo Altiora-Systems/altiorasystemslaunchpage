@@ -12,6 +12,32 @@
   <link rel="icon" href="assets/icons/favicons/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icons/favicons/favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/icons/favicons/apple-touch-icon.png">
+  
+  <!-- Resource Hints for Performance -->
+  <link rel="dns-prefetch" href="//x.com">
+  <link rel="dns-prefetch" href="//www.linkedin.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="css/base.css" as="style">
+  <link rel="preload" href="css/shared.css" as="style">
+  <link rel="preload" href="assets/icons/ui/Wordmark Logo.svg" as="image">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Contact Altiora Systems to partner with us or learn more about our Caribbean logistics solutions. Get in touch with our team today.">
+  <meta name="keywords" content="Contact Altiora Systems, Caribbean logistics contact, partnership inquiry, business contact">
+  <meta name="author" content="Altiora Systems LLC">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Contact Altiora Systems - Get In Touch">
+  <meta property="og:description" content="Ready to transform Caribbean logistics? Contact our team to discuss partnerships and learn more about our innovative solutions.">
+  <meta property="og:image" content="assets/images/mockups/altioraconnect.png">
+  <meta property="og:url" content="https://www.altiorasystems.com/contact">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Altiora Systems - Get In Touch">
+  <meta name="twitter:description" content="Ready to transform Caribbean logistics? Contact our team to discuss partnerships.">
+  <meta name="twitter:image" content="assets/images/mockups/altioraconnect.png">
 </head>
 <body>
   <header class="header">
@@ -60,7 +86,9 @@
       <div class="contact-layout">
         <!-- Left side: Form -->
         <div class="contact-form-section">
-          <form class="contact-form" id="contact-form">
+          <form class="contact-form" id="contact-form" method="POST" action="YOUR_GOOGLE_SHEETS_SCRIPT_URL">
+            <input type="hidden" name="_next" value="/thank-you.html">
+            <input type="hidden" name="_subject" value="Contact Form Submission">
             <div class="form-group">
               <label for="name" class="form-label">Name</label>
               <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>

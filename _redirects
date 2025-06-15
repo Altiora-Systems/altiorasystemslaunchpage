@@ -1,0 +1,19 @@
+# Netlify Redirects and Rewrites
+
+# Handle form submissions
+/contact  /contact.html  200
+
+# Redirect old paths to new structure
+/home     /               301
+/home.html /              301
+
+# Handle 404s with custom page
+/*        /404.html       404
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()

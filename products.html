@@ -12,6 +12,35 @@
   <link rel="icon" href="assets/icons/favicons/favicon.ico" sizes="any">
   <link rel="icon" href="assets/icons/favicons/favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/icons/favicons/apple-touch-icon.png">
+  <link rel="icon" href="assets/icons/favicons/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/icons/favicons/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/favicons/apple-touch-icon.png">
+  
+  <!-- Resource Hints for Performance -->
+  <link rel="dns-prefetch" href="//x.com">
+  <link rel="dns-prefetch" href="//www.linkedin.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="css/base.css" as="style">
+  <link rel="preload" href="css/shared.css" as="style">
+  <link rel="preload" href="assets/icons/ui/Wordmark Logo.svg" as="image">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore Altiora Systems' flagship products: BarrelLink marketplace and Altiora Connect platform, launching Q4 2025 to revolutionize Caribbean logistics.">
+  <meta name="keywords" content="BarrelLink, Altiora Connect, Caribbean shipping products, barrel shipping marketplace, logistics platform">
+  <meta name="author" content="Altiora Systems LLC">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Our Products - BarrelLink & Altiora Connect">
+  <meta property="og:description" content="Revolutionary digital platforms for Caribbean barrel shipping - BarrelLink consumer marketplace and Altiora Connect B2B platform.">
+  <meta property="og:image" content="assets/images/mockups/altioraconnect.png">
+  <meta property="og:url" content="https://www.altiorasystems.com/products">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Products - BarrelLink & Altiora Connect">
+  <meta name="twitter:description" content="Revolutionary digital platforms for Caribbean barrel shipping launching Q4 2025.">
+  <meta name="twitter:image" content="assets/images/mockups/altioraconnect.png">
 </head>
 <body>
   <header class="header">
@@ -61,7 +90,9 @@
       </div>
       
       <div class="products-figma-form-container">
-        <form class="products-figma-form" id="notify-form">
+        <form class="products-figma-form" id="notify-form" method="POST" action="YOUR_GOOGLE_SHEETS_SCRIPT_URL">
+          <input type="hidden" name="_next" value="/thank-you.html">
+          <input type="hidden" name="_subject" value="Product Launch Notification Request">
           <div class="products-email-container">
             <input 
               type="email" 

@@ -6,100 +6,55 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const firstName = document.getElementById('firstName')?.value.trim();
-            const lastName = document.getElementById('lastName')?.value.trim();
-            const companyName = document.getElementById('companyName')?.value.trim();
-            const contactEmail = document.getElementById('contactEmail')?.value.trim();
-            const message = document.getElementById('message')?.value.trim();
-            const agreeComms = document.getElementById('agreeComms')?.checked;
-            
-            // Check for new contact form format
             const name = document.getElementById('name')?.value.trim();
             const email = document.getElementById('email')?.value.trim();
             const subject = document.getElementById('subject')?.value.trim();
+            const message = document.getElementById('message')?.value.trim();
+            const agreeComms = document.getElementById('agreeComms')?.checked;
             
-            // Handle different form formats
-            if (firstName && lastName && companyName && contactEmail && message) {
-                // Old form format
-                if (!agreeComms) {
-                    showContactError('Please agree to receive communications from Altiora Systems.');
-                    return;
-                }
-                
-                if (!isValidEmail(contactEmail)) {
-                    showContactError('Please enter a valid email address.');
-                    return;
-                }
-                
-                handleOldContactForm(firstName, lastName, companyName, contactEmail, message);
-            } else if (name && email && subject && message) {
-                // New form format
-                const newAgreeComms = document.getElementById('agreeComms')?.checked;
-                
-                if (!newAgreeComms) {
-                    showContactError('Please agree to receive communications from Altiora Systems.');
-                    return;
-                }
-                
-                if (!isValidEmail(email)) {
-                    showContactError('Please enter a valid email address.');
-                    return;
-                }
-                
-                handleNewContactForm(name, email, subject, message);
-            } else {
+            // Validation
+            if (!name || !email || !subject || !message) {
+                e.preventDefault();
                 showContactError('Please fill in all required fields.');
                 return;
+            }
+            
+            if (!agreeComms) {
+                e.preventDefault();
+                showContactError('Please agree to receive communications from Altiora Systems.');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                e.preventDefault();
+                showContactError('Please enter a valid email address.');
+                return;
+            }
+            
+            // Check if form has an action URL (Google Sheets setup)
+            const formAction = contactForm.getAttribute('action');
+            if (!formAction || formAction.includes('YOUR_GOOGLE_SHEETS_SCRIPT_URL')) {
+                // Fallback to mailto if no backend service is configured
+                e.preventDefault();
+                handleMailtoFallback(name, email, subject, message);
+            } else {
+                // Google Sheets is configured - handle submission
+                e.preventDefault();
+                submitToGoogleSheets(contactForm, {
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message,
+                    agreeComms: document.getElementById('agreeComms').checked
+                });
             }
         });
     }
 });
 
-function handleOldContactForm(firstName, lastName, companyName, email, message) {
+function handleMailtoFallback(name, email, subject, message) {
     const contactForm = document.getElementById('contact-form');
-    const submitButton = contactForm.querySelector('.contact-submit-btn');
-    const originalText = submitButton.innerHTML;
-    
-    // Show loading state
-    submitButton.innerHTML = 'Sending...';
-    submitButton.disabled = true;
-    
-    // Create email content
-    const subject = encodeURIComponent('Contact Form Submission');
-    const body = encodeURIComponent(`Hello,
-
-I would like to get in touch with you.
-
-Name: ${firstName} ${lastName}
-Company: ${companyName}
-Email: ${email}
-
-Message:
-${message}
-
-Thank you!`);
-    
-    const mailtoLink = `mailto:contact@altiorasystems.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Reset form after a brief delay
-    setTimeout(() => {
-        contactForm.reset();
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
-        
-        // Show success message
-        showContactSuccess('Thank you! Your email client should open to send your message.');
-    }, 1000);
-}
-
-function handleNewContactForm(name, email, subject, message) {
-    const contactForm = document.getElementById('contact-form');
-    const submitButton = contactForm.querySelector('button[type="submit"]') || contactForm.querySelector('.contact-submit-btn');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalText = submitButton.innerHTML;
     
     // Show loading state
@@ -131,9 +86,30 @@ Thank you!`);
         contactForm.reset();
         submitButton.innerHTML = originalText;
         submitButton.disabled = false;
-        
         showContactSuccess('Thank you! Your email client should open to send your message.');
     }, 1000);
+}
+
+function submitToGoogleSheets(form, data) {
+    const formAction = form.getAttribute('action');
+    
+    fetch(formAction, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(() => {
+        // Google Sheets submission successful
+        window.location.href = '/thank-you.html';
+    })
+    .catch((error) => {
+        console.error('Error submitting to Google Sheets:', error);
+        // Fallback to mailto
+        handleMailtoFallback(data.name, data.email, data.subject, data.message);
+    });
 }
 
 // Clear form function for contact page
