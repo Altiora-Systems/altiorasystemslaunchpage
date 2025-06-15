@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Simulate form submission
+            // Send email to contact@altiorasystems.com
             const submitButton = notifyForm.querySelector('.notify-button');
             const originalText = submitButton.innerHTML;
             
@@ -28,16 +28,30 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.innerHTML = 'Submitting...';
             submitButton.disabled = true;
             
-            // Simulate API call delay
+            // Send email using mailto (will open user's email client)
+            const subject = encodeURIComponent('Product Launch Notification Request');
+            const body = encodeURIComponent(`Hello,
+
+I would like to be notified when Barrel Link and AltioraConnect products are available.
+
+Email: ${email}
+
+Thank you!`);
+            
+            const mailtoLink = `mailto:contact@altiorasystems.com?subject=${subject}&body=${body}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Reset form after a brief delay
             setTimeout(() => {
-                // Reset form
                 emailInput.value = '';
                 submitButton.innerHTML = originalText;
                 submitButton.disabled = false;
                 
                 // Show success message
-                showSuccess('Thank you! We\'ll notify you when our products launch.');
-            }, 1500);
+                showSuccess('Thank you! Your email client should open to send the notification request.');
+            }, 1000);
         });
     }
 });
