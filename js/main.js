@@ -1,52 +1,119 @@
 // Shared JavaScript functionality across all pages
 
 // Mobile Menu Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenuDropdown = document.querySelector('.mobile-menu-dropdown');
+let mobileMenuInitialized = false;
+let mobileMenuBtn = null;
+let mobileMenuDropdown = null;
+
+// Mobile menu toggle function
+function toggleMobileMenu() {
+    if (!mobileMenuBtn || !mobileMenuDropdown) {
+        console.error('Mobile menu elements not available for toggle');
+        return false;
+    }
+    
+    const isActive = mobileMenuDropdown.classList.contains('active');
+    console.log('Toggle mobile menu - currently active:', isActive);
+    
+    if (isActive) {
+        // Close menu
+        mobileMenuDropdown.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        console.log('Menu closed');
+        return false; // Menu is now closed
+    } else {
+        // Open menu
+        mobileMenuDropdown.classList.add('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        console.log('Menu opened');
+        return true; // Menu is now open
+    }
+}
+
+// Close mobile menu function
+function closeMobileMenu() {
+    if (!mobileMenuDropdown) {
+        console.error('Mobile menu dropdown not available for close');
+        return;
+    }
+    
+    if (mobileMenuDropdown.classList.contains('active')) {
+        mobileMenuDropdown.classList.remove('active');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+        console.log('Menu closed via function');
+        return true;
+    }
+    return false;
+}
+
+// Enhanced touch handling
+function handleTouch(e) {
+    console.log('Touch event detected:', e.type);
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Only handle touchend to avoid double-firing with click
+    if (e.type === 'touchend') {
+        toggleMobileMenu();
+    }
+}
+
+// Enhanced click handling
+function handleClick(e) {
+    console.log('Click event detected');
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMobileMenu();
+}
+
+// Initialize mobile menu with enhanced touch support
+function initializeMobileMenu() {
+    mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    mobileMenuDropdown = document.querySelector('.mobile-menu-dropdown');
     
     console.log('Mobile menu elements found:', {
         button: !!mobileMenuBtn,
-        dropdown: !!mobileMenuDropdown
+        dropdown: !!mobileMenuDropdown,
+        buttonVisible: mobileMenuBtn ? window.getComputedStyle(mobileMenuBtn).display !== 'none' : false
     });
     
     if (mobileMenuBtn && mobileMenuDropdown) {
         console.log('Mobile menu: Adding event listeners');
         
-        mobileMenuBtn.addEventListener('click', function(e) {
-            console.log('Mobile menu button clicked');
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const isActive = mobileMenuDropdown.classList.contains('active');
-            console.log('Menu currently active:', isActive);
-            
-            if (isActive) {
-                // Close menu
-                mobileMenuDropdown.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                console.log('Menu closed');
-            } else {
-                // Open menu
-                mobileMenuDropdown.classList.add('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'true');
-                console.log('Menu opened');
-            }
-        });
+        // Remove any existing listeners first
+        mobileMenuBtn.removeEventListener('click', handleClick);
+        mobileMenuBtn.removeEventListener('touchstart', handleTouch);
+        mobileMenuBtn.removeEventListener('touchend', handleTouch);
         
-        // Close menu when clicking outside
+        // Add click handler
+        mobileMenuBtn.addEventListener('click', handleClick);
+        
+        // Add touch handlers for better mobile support
+        mobileMenuBtn.addEventListener('touchstart', handleTouch, { passive: false });
+        mobileMenuBtn.addEventListener('touchend', handleTouch, { passive: false });
+        
+        // Enhanced outside click handler
         document.addEventListener('click', function(event) {
-            if (!mobileMenuBtn.contains(event.target) && !mobileMenuDropdown.contains(event.target)) {
-                mobileMenuDropdown.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            if (mobileMenuDropdown.classList.contains('active')) {
+                const clickedInsideButton = mobileMenuBtn.contains(event.target);
+                const clickedInsideDropdown = mobileMenuDropdown.contains(event.target);
+                
+                if (!clickedInsideButton && !clickedInsideDropdown) {
+                    console.log('Outside click detected - closing menu');
+                    closeMobileMenu();
+                }
             }
         });
         
-        // Close menu when pressing escape
+        // Enhanced escape key handler
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && mobileMenuDropdown.classList.contains('active')) {
-                mobileMenuDropdown.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            if (event.key === 'Escape' || event.keyCode === 27) {
+                if (mobileMenuDropdown.classList.contains('active')) {
+                    console.log('Escape key pressed - closing menu');
+                    closeMobileMenu();
+                }
             }
         });
         
@@ -54,21 +121,68 @@ document.addEventListener('DOMContentLoaded', function() {
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', function() {
+                console.log('Mobile nav link clicked - closing menu');
                 setTimeout(() => {
-                    mobileMenuDropdown.classList.remove('active');
-                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                }, 100);
+                    closeMobileMenu();
+                }, 150);
             });
         });
+        
+        mobileMenuInitialized = true;
+        console.log('Mobile menu initialization complete with touch support');
+        
+        // Test touch support
+        const touchSupported = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        console.log('Touch support detected:', touchSupported);
+        
     } else {
         console.error('Mobile menu elements not found:', {
             button: !!mobileMenuBtn,
             dropdown: !!mobileMenuDropdown
         });
     }
-    
-    console.log('Main.js: Mobile menu initialization complete');
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit to ensure CSS is loaded
+    setTimeout(initializeMobileMenu, 100);
 });
+
+// Make functions available globally for testing
+window.toggleMobileMenu = toggleMobileMenu;
+window.closeMobileMenu = closeMobileMenu;
+window.getMobileMenuState = function() {
+    return {
+        initialized: mobileMenuInitialized,
+        buttonExists: !!mobileMenuBtn,
+        dropdownExists: !!mobileMenuDropdown,
+        isActive: mobileMenuDropdown ? mobileMenuDropdown.classList.contains('active') : false,
+        buttonVisible: mobileMenuBtn ? window.getComputedStyle(mobileMenuBtn).display !== 'none' : false,
+        touchSupported: 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    };
+};
+
+// Debug function for testing
+window.debugMobileMenu = function() {
+    const state = window.getMobileMenuState();
+    console.log('Mobile Menu Debug Info:', state);
+    
+    if (mobileMenuBtn) {
+        const styles = window.getComputedStyle(mobileMenuBtn);
+        console.log('Button styles:', {
+            display: styles.display,
+            visibility: styles.visibility,
+            opacity: styles.opacity,
+            position: styles.position,
+            zIndex: styles.zIndex
+        });
+    }
+    
+    return state;
+};
+
+console.log('Main.js: Mobile menu functions loaded with enhanced touch support');
 
 // Shared Utility Functions
 function isValidEmail(email) {

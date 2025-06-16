@@ -15,19 +15,32 @@ Modern, responsive website for Altiora Systems showcasing products and services 
 - ✅ **SEO optimization** for search engine visibility
 - ✅ **Performance optimized** with fast loading times
 - ✅ **Modern UI/UX** with smooth micro-interactions
+- ✅ **Comprehensive mobile menu** with touch support
+- ✅ **Cross-browser compatibility** verified
 
 ---
 
 ## 📁 **PROJECT STRUCTURE**
 
-### **Core Files**
+### **Core Files (Production)**
 ```
-├── index.html              # Homepage
-├── about.html              # About page with team information
-├── products.html           # Products/services page
-├── contact.html            # Contact form page
-├── 404.html               # Error page
-├── thank-you.html         # Form submission confirmation
+├── index.html                    # Homepage
+├── about.html                    # About page with team information
+├── products.html                 # Products/services page
+├── contact.html                  # Contact form page
+├── thank-you.html               # Form submission confirmation
+├── 404.html                     # Error page
+├── mobile-menu-quick-test.html  # Mobile menu testing (can be removed for production)
+├── css/                         # Stylesheets
+├── js/                          # JavaScript functionality
+├── assets/                      # Images, icons, fonts
+└── configuration files          # manifest.json, robots.txt, etc.
+
+### **Documentation & Development**
+├── PROJECT_DOCUMENTATION.md    # 📖 Comprehensive project guide
+├── DEPLOYMENT_GUIDE.md          # 🚀 Deployment instructions
+├── Documents/                   # 📚 Detailed documentation
+└── development/                 # 🔧 Testing and development tools
 ├── robots.txt             # SEO directives
 ├── sitemap.xml            # Search engine sitemap
 ├── manifest.json          # PWA manifest
