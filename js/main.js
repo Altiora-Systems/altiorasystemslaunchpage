@@ -2,11 +2,14 @@
 
 // Mobile Menu Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - main.js');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenuDropdown = document.querySelector('.mobile-menu-dropdown');
     
     if (mobileMenuBtn && mobileMenuDropdown) {
+        console.log('Mobile menu elements found.');
         mobileMenuBtn.addEventListener('click', function() {
+            console.log('Mobile menu button clicked!');
             const isActive = mobileMenuDropdown.classList.contains('active');
             
             if (isActive) {
